@@ -1,14 +1,47 @@
+
+Release 2.0.0
+=============
+Date
+----
+August, 29 2024.
+
+BLE firmware
+------------
+stm32wb5x_BLE_Stack_full_fw.bin version 1.17.3.
+Flash address: 0x080CE000
+
+Bug fix
+-------
+AGM-551 AOS-SDK. WIFI should preempt the BLE connectivity
+AGM-552 AOS-SDK. BLE scan does not pay attention to the min RSSI filter
+AGM-553 AOS-SDK. The BLE scan fails randomly, then the tracker reset (watchdog).
+AGM-555 AOS-SDK. Make release 2.0.0
+
+New feature
+-----------
+None
+
+Incompatibility
+---------------
+BLE firmware must be upgraded to 1.17.3
+
+
+
 Release 1.2.1
 =============
 Date
 ----
 August, 13 2024.
 
+BLE firmware
+------------
+stm32wb5x_BLE_Stack_full_fw.bin version 1.15.0
+Flash address: 0x080CE000
+
 
 Bug fix
 -------
 AGM-548 AOS-SDK. BLE continuous tx test generates a watchdog reset
-Task
 AGM-549 AOS-SDK. Make release 1.2.1
 
 
@@ -22,6 +55,11 @@ Release 1.2.0
 Date
 ----
 August, 13 2024.
+
+BLE firmware
+------------
+stm32wb5x_BLE_Stack_full_fw.bin version 1.15.0
+Flash address: 0x080CE000
 
 Bug fix
 -------
@@ -47,10 +85,13 @@ None
 
 
 
-
-
 Release 1.1.0
 =============
+BLE firmware
+------------
+stm32wb5x_BLE_Stack_full_fw.bin version 1.15.0
+Flash address: 0x080CE000
+
 Bug fix
 -------
 AGM-436 fixes for GM02S crash : change modem opening sequence when forcing the operator

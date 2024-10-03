@@ -146,15 +146,17 @@ aos_result_t aos_system_trigger_user_callback(uint8_t user_id);
 aos_result_t aos_system_read_cpu_temperature(int16_t* temperature);
 
 /*!
- * \fn aos_result_t aos_system_clock_resume(void)
+ * \fn aos_result_t aos_system_clock_resume(bool set_system_clock)
  *
  * \brief Restart the main clocks after wake up.
+ *
+ * \param set_system_clock True if the system clock (PLL) must be restarted
  *
  * \return the success/error
  *
  * \warning Intended to be used internally only.
  */
-aos_result_t aos_system_clock_resume(void);
+aos_result_t aos_system_clock_resume(bool set_system_clock);
 
 /*!
  * \fn void aos_system_critical_section_begin( uint32_t* mask )

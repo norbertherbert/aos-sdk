@@ -63,20 +63,83 @@ $(function() {
 
 <div class="header">
   <div class="summary">
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">BLE Control transport access</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gad89c256552a097d8e997c949b5c7f10f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__shci.html#gad89c256552a097d8e997c949b5c7f10f">aos_ble_c2_clock_t</a> { <a class="el" href="group__aos__ble__shci.html#ggad89c256552a097d8e997c949b5c7f10face1aefd4723ca64b212a55da4ed8c15b">aos_ble_c2_clock_hse_to_pll</a> = 0, 
+<a class="el" href="group__aos__ble__shci.html#ggad89c256552a097d8e997c949b5c7f10fa405d72c29db6eea4e125578278341ec4">aos_ble_c2_clock_pll_on_to_hse</a> = 1, 
+<a class="el" href="group__aos__ble__shci.html#ggad89c256552a097d8e997c949b5c7f10faa75b68d3b613d4242274f1a448b0c7c4">aos_ble_c2_clock_pll_off_to_hse</a> =2
+ }</td></tr>
+<tr class="memdesc:gad89c256552a097d8e997c949b5c7f10f"><td class="mdescLeft">&#160;</td><td class="mdescRight">System clock switch type to be done by the CPU2.  <a href="group__aos__ble__shci.html#gad89c256552a097d8e997c949b5c7f10f">More...</a><br /></td></tr>
+<tr class="separator:gad89c256552a097d8e997c949b5c7f10f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga2fbc455d4732551d506ac99f92ccf387"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__shci.html#ga2fbc455d4732551d506ac99f92ccf387">aos_ble_shci_init</a> (void)</td></tr>
 <tr class="memdesc:ga2fbc455d4732551d506ac99f92ccf387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the control transport with the M0+.  <a href="group__aos__ble__shci.html#ga2fbc455d4732551d506ac99f92ccf387">More...</a><br /></td></tr>
 <tr class="separator:ga2fbc455d4732551d506ac99f92ccf387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabf3e232c3f4f386157be021fdaaf0f6d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__shci.html#gabf3e232c3f4f386157be021fdaaf0f6d">aos_ble_shci_set_c2_clock</a> (<a class="el" href="group__aos__ble__shci.html#gad89c256552a097d8e997c949b5c7f10f">aos_ble_c2_clock_t</a> clock)</td></tr>
+<tr class="memdesc:gabf3e232c3f4f386157be021fdaaf0f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instruct the CPU2 to switch the system clock.  <a href="group__aos__ble__shci.html#gabf3e232c3f4f386157be021fdaaf0f6d">More...</a><br /></td></tr>
+<tr class="separator:gabf3e232c3f4f386157be021fdaaf0f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae2b02354d4f6e2e7538c5a04fb886506"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__shci.html#gae2b02354d4f6e2e7538c5a04fb886506">aos_ble_shci_cpu2_started</a> (void)</td></tr>
+<tr class="memdesc:gae2b02354d4f6e2e7538c5a04fb886506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the CPU has started.  <a href="group__aos__ble__shci.html#gae2b02354d4f6e2e7538c5a04fb886506">More...</a><br /></td></tr>
+<tr class="separator:gae2b02354d4f6e2e7538c5a04fb886506"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gad89c256552a097d8e997c949b5c7f10f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad89c256552a097d8e997c949b5c7f10f">&#9670;&nbsp;</a></span>aos_ble_c2_clock_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__aos__ble__shci.html#gad89c256552a097d8e997c949b5c7f10f">aos_ble_c2_clock_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>System clock switch type to be done by the CPU2. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggad89c256552a097d8e997c949b5c7f10face1aefd4723ca64b212a55da4ed8c15b"></a>aos_ble_c2_clock_hse_to_pll&#160;</td><td class="fielddoc"><p>Switch from HSE to PLL. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggad89c256552a097d8e997c949b5c7f10fa405d72c29db6eea4e125578278341ec4"></a>aos_ble_c2_clock_pll_on_to_hse&#160;</td><td class="fielddoc"><p>Switch from PLL to HSE and keep PLL on. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggad89c256552a097d8e997c949b5c7f10faa75b68d3b613d4242274f1a448b0c7c4"></a>aos_ble_c2_clock_pll_off_to_hse&#160;</td><td class="fielddoc"><p>Switch from PLL to HSE and shutdown the PLL. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="gae2b02354d4f6e2e7538c5a04fb886506"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae2b02354d4f6e2e7538c5a04fb886506">&#9670;&nbsp;</a></span>aos_ble_shci_cpu2_started()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool aos_ble_shci_cpu2_started </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check whether the CPU has started. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the CPU has started,</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Called by AOS only </dd></dl>
+
+</div>
+</div>
 <a id="ga2fbc455d4732551d506ac99f92ccf387"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga2fbc455d4732551d506ac99f92ccf387">&#9670;&nbsp;</a></span>aos_ble_shci_init()</h2>
 
@@ -94,6 +157,34 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialize the control transport with the M0+. </p>
+<dl class="section note"><dt>Note</dt><dd>Called by AOS only </dd></dl>
+
+</div>
+</div>
+<a id="gabf3e232c3f4f386157be021fdaaf0f6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabf3e232c3f4f386157be021fdaaf0f6d">&#9670;&nbsp;</a></span>aos_ble_shci_set_c2_clock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool aos_ble_shci_set_c2_clock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__aos__ble__shci.html#gad89c256552a097d8e997c949b5c7f10f">aos_ble_c2_clock_t</a>&#160;</td>
+          <td class="paramname"><em>clock</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Instruct the CPU2 to switch the system clock. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clock</td><td>Clock type to switch to</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True is correct completion, false otherwise</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Called by AOS only </dd></dl>
 
 </div>
