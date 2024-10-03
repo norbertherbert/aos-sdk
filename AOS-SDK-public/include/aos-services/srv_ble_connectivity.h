@@ -226,6 +226,20 @@ uint16_t srv_ble_connectivity_get_connection_handle(void);
  */
 void srv_ble_connectivity_init_ble_services(aos_ble_app_data_t *app_info);
 
+/*!
+ * \fn aos_result_t srv_ble_connectivity_set_passkey(bool enable, uint32_t passkey)
+ *
+ * \brief Set BLE authentication requirement depending on pass key uses,
+ * The new Authentication requirement will take effect for new bonded devices,
+ * already bonded devices are not removed automatically.
+ *
+ * \param enable True if passkey should be used, False if not.
+ * \param passkey passkey value, it should be a value between 000000 and 999999
+ *
+ * \return result status
+ */
+aos_result_t srv_ble_connectivity_set_passkey(bool enable, uint32_t passkey);
+
 /*! @}*/
 #ifdef __cplusplus
 }

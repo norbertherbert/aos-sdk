@@ -46,6 +46,23 @@ extern "C" {
 
 
 /* Exported types ------------------------------------------------------------*/
+/*!
+ * \struct aos_ble_core_security_params_t
+ *
+ * \brief security parameters structure.
+ */
+typedef struct {
+	uint8_t io_capability;                 //!< IO capability of the device
+	uint8_t mitm_mode;                     //!< Authentication requirement of the device Man In the Middle protection required?
+	uint8_t bonding_mode;                  //!< Bonding mode of the device
+	uint8_t use_fixed_pin;                 //!< 0 implies use fixed pin and 1 implies request for passkey
+	uint8_t encryption_key_size_min;       //!< Minimum encryption key size requirement
+	uint8_t encryption_key_size_max;       //!< Maximum encryption key size requirement
+	uint32_t fixed_pin;                    //!< Fixed pin to be used in the pairing process if use_fixed_pin is set to 1
+	uint8_t sc_support;                    //!< Secure connections support
+	uint8_t identity_address_type;         //!< Identity address type, PUBLIC or RANDOM
+	uint8_t keypress_notification_support; //!< Keypress notification support
+} aos_ble_core_security_params_t;
 
 /*!
  * \typedef void aos_ble_core_notif_callback_t(void *pckt)
@@ -196,6 +213,20 @@ void aos_ble_core_set_connectivity_callback(aos_ble_core_notif_callback_t cb);
  *
  */
 void aos_ble_core_set_app_callback(aos_ble_core_notif_callback_t cb);
+
+/*!
+ * \fn bool aos_ble_core_set_authentication_requirement(aos_ble_core_security_params_t ble_security_param)
+ *
+ * \brief Set BLE authentication requirement,
+ * The new Authentication requirement will take effect for new bonded devices,
+ * already bonded devices are not removed automatically.
+ *
+ * \param ble_security_param BLE security parameters.
+ *
+ * \return success/failure
+ *
+ */
+bool aos_ble_core_set_authentication_requirement(aos_ble_core_security_params_t ble_security_param);
 
 /* USER CODE END EF */
 

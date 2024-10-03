@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['year_2240',['year',['../structaos__gnss__utc__time__t.html#aeebbaa34a4ea7c5ac00b5e107627b8bf',1,'aos_gnss_utc_time_t']]],
-  ['yes_2241',['YES',['../group__app__ble__conf.html#ga7ebc9a785e5ab85457c98595aac81589',1,'app_conf.h']]]
+  ['xmodem_5fdata_5fsize_2265',['XMODEM_DATA_SIZE',['../group__xmodem__srv.html#gaa28272cf7133993c79d93186c7d0ae1b',1,'srv_xmodem.h']]],
+  ['xmodem_20service_2266',['xModem service',['../group__xmodem__srv.html',1,'']]],
+  ['xpsr_2267',['xpsr',['../structaos__error__reg__info__t.html#a2048e8c8533c8a151535543c9f025e09',1,'aos_error_reg_info_t']]]
 ];

@@ -1,3 +1,34 @@
+Release 2.1.0
+=============
+Date
+----
+Septembe, 30 2024.
+
+BLE firmware
+------------
+stm32wb5x_BLE_Stack_full_fw.bin version 1.17.3.
+Flash address: 0x080CE000
+
+Bug fix
+-------
+AGM-559 AOS-SDK. XModem fails to load the LR1110 binary
+AGM-560 AOS-SDK. Fail to stop the LED sequencer for LED 0
+AGM-579 AOS-SDK. Tracker reset due to the new BLE config 
+AGM-586 AOS-SDK: Error in the power consumption estimation in AT3-196 candidate
+AGM-587 AOS-SDK. Create release 2.1.0
+
+New feature
+-----------
+AGM-574 AOS-SDK. Add SPI Flash driver
+AGM-525 Add use of pin code for BLE connectivity
+AGM-557 AOS-SDK. Implement the OTP feature in the STM32WB55 to store the HSE calibration data 
+
+
+Incompatibility
+---------------
+None.
+
+
 
 Release 2.0.0
 =============

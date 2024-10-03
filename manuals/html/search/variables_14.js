@@ -1,8 +1,21 @@
 var searchData=
 [
-  ['value_3214',['value',['../structcli__notification__t.html#a2f89223f422dc018ea0349a933f93780',1,'cli_notification_t::value()'],['../structcli__ioctl__t.html#a8d176811878defdde6cefdf1560f1038',1,'cli_ioctl_t::value()'],['../structcli__parser__notification__t.html#a7b617d664b72790c8accd958adc809a7',1,'cli_parser_notification_t::value()'],['../structcli__parser__ioctl__t.html#a28eb1ce3321e0c8f7c6eec3bf8d58bef',1,'cli_parser_ioctl_t::value()'],['../structaos__gnss__ioctl__t.html#a7dd71993455d60a825e7d68d96a007dd',1,'aos_gnss_ioctl_t::value()'],['../structaos__i2c__ioctl__t.html#a01405aa7eb9e9fdf9572eda488bc23cf',1,'aos_i2c_ioctl_t::value()'],['../structaos__spi__ioctl__t.html#aadceb7ccb4248cb5fde94a7d1890ee72',1,'aos_spi_ioctl_t::value()'],['../structsrv__ble__scan__param__filter__t.html#aab5c0cfff5e7854b7768d1c89118d485',1,'srv_ble_scan_param_filter_t::value()'],['../structsrv__config__param__descriptor__t.html#a5272991c2b67b0d910ad6a8ac8c83c79',1,'srv_config_param_descriptor_t::value()']]],
-  ['value_5foffset_3215',['value_offset',['../structble__char__update__data__t.html#a8d72200b3061e35ebca8f3cb182096f5',1,'ble_char_update_data_t']]],
-  ['vbatt_3216',['vbatt',['../structsrv__ble__scan__eddystone__info__t.html#a9f79e74acc5df0f606d6ca0c5fff5e0c',1,'srv_ble_scan_eddystone_info_t']]],
-  ['vdop_3217',['vdop',['../structaos__gnss__fix__info__t.html#af62c04a9a51576001d43682846aae658',1,'aos_gnss_fix_info_t']]],
-  ['version_3218',['version',['../structsrv__ble__scan__eddystone__info__t.html#a96a7d0a11feacab9e5da14167eaca390',1,'srv_ble_scan_eddystone_info_t::version()'],['../structsrv__config__flash__info__t.html#adecdfd4e11e9b8746908fe7f737df96d',1,'srv_config_flash_info_t::version()'],['../structsrv__gnss__mt3333__query__info__t.html#a9309f0a90477d02128e2fd96031ae5c1',1,'srv_gnss_mt3333_query_info_t::version()']]]
+  ['uart_5fcfg_3246',['uart_cfg',['../structcli__config__param__t.html#a3d27a0548eb2acaf5ed41fb345b7b7b3',1,'cli_config_param_t']]],
+  ['uid_3247',['uid',['../structsrv__ble__scan__eddystone__info__t.html#a02a8c2991af0bf8301176ac34c5bbbff',1,'srv_ble_scan_eddystone_info_t']]],
+  ['update_5fsystime_5fon_5ffix_3248',['update_systime_on_fix',['../structsrv__gnss__mt3333__configuration__t.html#a8db02bb4101a997278d69807ba402776',1,'srv_gnss_mt3333_configuration_t']]],
+  ['url_3249',['url',['../structsrv__ble__scan__eddystone__info__t.html#af0c91f3d36d53a1a7a426b4eb6d306cf',1,'srv_ble_scan_eddystone_info_t']]],
+  ['url_5fencoded_3250',['url_encoded',['../structsrv__ble__scan__eddystone__info__t.html#ac2779f9a5e93f44b964456ab24f61229',1,'srv_ble_scan_eddystone_info_t']]],
+  ['url_5fscheme_3251',['url_scheme',['../structsrv__ble__scan__eddystone__info__t.html#a96e48d1948ee0921c1cd4a03adef93c4',1,'srv_ble_scan_eddystone_info_t']]],
+  ['use_5ffixed_5fpin_3252',['use_fixed_pin',['../structaos__ble__core__security__params__t.html#ab44bc3d7d303845ab0cb2c85c5aa2d74',1,'aos_ble_core_security_params_t']]],
+  ['used_3253',['used',['../structnmea__parse__msg__t.html#afb03aebf38f0e709e01ea9ba3c20bfd8',1,'nmea_parse_msg_t']]],
+  ['user_3254',['user',['../structsrv__config__flash__version__t.html#a024e0be92285380048d634d87da22f28',1,'srv_config_flash_version_t']]],
+  ['user_5farg_3255',['user_arg',['../structcli__t.html#a45b3e224a2343d5c2aedee92f06dea8f',1,'cli_t::user_arg()'],['../structaos__gpio__config__t.html#a743940ca1c1bbe3055b5607d4c01ccdd',1,'aos_gpio_config_t::user_arg()'],['../structaos__uart__config__t.html#a32f4a6252bc3f6771e3302076329fb9d',1,'aos_uart_config_t::user_arg()']]],
+  ['user_5fnotify_3256',['user_notify',['../structcli__t.html#a9222a7ba1b2783318c9f205ae9d9f1a7',1,'cli_t']]],
+  ['user_5fpsw_3257',['user_psw',['../structcli__config__param__t.html#a74b35008e79aa0339d989a31cff47784',1,'cli_config_param_t']]],
+  ['user_5frx_5fcb_3258',['user_rx_cb',['../structaos__uart__config__t.html#aa931ad5b372b11b2a056b1f8e6d3585c',1,'aos_uart_config_t']]],
+  ['users_3259',['users',['../structaos__rf__switch__info__t.html#ab4b968b0aed14e8f25eacd9d94b2ddea',1,'aos_rf_switch_info_t']]],
+  ['uuid_3260',['uuid',['../structuuid__type__t.html#a43461e22f8472a5f527c12730ceb9fb5',1,'uuid_type_t']]],
+  ['uuid_5f128_3261',['uuid_128',['../unionuuid__t.html#a8e5faaaabf18bb4cb7fce233b9f527dd',1,'uuid_t']]],
+  ['uuid_5f16_3262',['uuid_16',['../unionuuid__t.html#a7f75e7c2f04a21ba5ca43c127b6a481e',1,'uuid_t']]],
+  ['uuid_5ftype_3263',['uuid_type',['../structuuid__type__t.html#aaae4a1d1a296a3abf041819e05834c80',1,'uuid_type_t']]]
 ];

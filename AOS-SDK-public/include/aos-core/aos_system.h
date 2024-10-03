@@ -204,7 +204,6 @@ uint32_t aos_system_get_freertos_timer_expiry(xTimerHandle timer_hdl, bool ms);
  */
 uint32_t aos_system_get_freertos_timer_elapsed(xTimerHandle timer_hdl, bool ms);
 
-
 /*!
  * \fn const char* aos_system_get_build_date(void)
  *
@@ -213,6 +212,19 @@ uint32_t aos_system_get_freertos_timer_elapsed(xTimerHandle timer_hdl, bool ms);
  *\return The number of ms or seconds before expiry
  */
 const char* aos_system_get_build_date(void);
+
+/*!
+ * \fn void aos_system_wait_us(uint32_t us)
+ *
+ * \brief Blocking delay in micro-deconds
+ *
+ *\param us Number of microseconds to wait for
+ *
+ *\note The function uses the cycle counter API (aos-cc), which is based on the Cortex-M DWT.
+ * The function is not protected for multi-accesses.
+ * AOS uses it for the board_drv_spi_flash only (when opening and closing the driver).
+ */
+void aos_system_wait_us(uint32_t us);
 
 /*! @}*/
 #ifdef __cplusplus

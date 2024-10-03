@@ -31,6 +31,8 @@ extern "C" {
 #define GM02S_APN_MAX_SIZE			32		//!< Max string size for the Access Point Name
 #define GM02S_OPERATOR_MAX_SIZE		32		//!< Max string size for Operator name
 #define GM02S_FIRMWARE_VERSION_LEN	16		//!< Max string size for FW version
+#define GM02S_FUOTA_URL_LENGTH		165		//!< Max string size for FUOTA URL
+
 /*
  * **********************************************************************************
  * PSM and eDRX bit mapping
@@ -107,6 +109,48 @@ typedef struct {
 	uint8_t data[GM02S_DATA_BUFFER_LEN];	//!< Data
 } gm02s_socket_buffer_t;
 
+
+/*
+ * **********************************************************************************
+ * Firmware upgrade management using FUOTA or SFU
+ * **********************************************************************************
+ */
+typedef enum {
+	gm02s_upgrade_mode_sfu = 0,		//!< Serial firmware upgrade (SFU)
+	gm02s_upgrade_mode_fuota,		//!< Firmware upgrade over the air (FUOTA)
+} gm02s_upgrade_mode_t;
+
+typedef enum {
+	gm02s_fuota_action_start = 1,	//!< Start firmware update over the air (FUOTA)
+	gm02s_fuota_action_cancel,		//!< Cancel an ongoing FUOTA
+	gm02s_fuota_action_suspend,		//!< Suspend an ongoing FUOTA
+	gm02s_fuota_action_resume,		//!< Resume FUOTA
+} gm02s_fuota_action_t;
+
+typedef enum {
+	gm02s_upgrade_status_start = 0,		//!< Upgrade status start
+	gm02s_upgrade_status_in_progress,	//!< Upgrade in progress
+	gm02s_upgrade_status_rebooting,		//!< Upgrade in reboot phase do not interact with  the modem
+	gm02s_upgrade_status_success,		//!< Upgrade status success
+	gm02s_upgrade_status_failure,		//!< Upgrade status fail
+} gm02s_upgrade_status_t;
+
+typedef enum {
+	gm02s_fuota_no_error = 0,						//!< Upgrade ongoing : no error
+	gm02s_fuota_error_general_error	,				//!< Upgrade failed : General error
+	gm02s_fuota_error_corrupted_image,				//!< Upgrade failed : Corrupted image
+	gm02s_fuota_error_invalid_signature,			//!< Upgrade failed : Invalid signature
+	gm02s_fuota_error_nw_error,						//!< Upgrade failed : Network error
+	gm02s_fuota_error_upgrade_already_in_progress,	//!< Upgrade failed : Upgrade already in progress
+	gm02s_fuota_error_no_upgrade_in_progress,		//!< Upgrade cancel failed : No upgrade in progress
+} gm02s_fuota_error_t;
+
+typedef struct{
+	gm02s_upgrade_mode_t mode;						//!< Firmware upgrade mode : FUOTA or SFU
+	gm02s_upgrade_status_t status;					//!< Firmware Upgrade status
+	uint8_t progress;								//!< Firmware upgrade progress
+	gm02s_fuota_error_t error;						//!< FUOTA result error
+} gm02s_fuota_status_info_t;
 
 /*
  * **********************************************************************************
@@ -309,21 +353,19 @@ typedef enum {
 }gm02s_modem_status_t;
 
 typedef enum {
-	gm02s_notif_type_open_done = 0,   	//!< GM02S configuration done.
-	gm02s_notif_type_close_done,   		//!< GM02S close done. (modem is shutdown)
-	gm02s_notif_type_modem_status, 		//!< GM02S Modem status
-	gm02s_notif_type_nw_status,  		//!< GSM02 network status
-	gm02s_notif_type_sim_status,  		//!< GSM02 SIM status
-	gm02s_notif_type_edrx_change,   	//!< eDRX change
-	gm02s_notif_type_socket_open,		//!< Socket opening result
-	gm02s_notif_type_socket_close,		//!< Socket close result
-	gm02s_notif_type_socket_rx_data,	//!< Socket Data received
-	gm02s_notif_type_socket_tx_done,	//!< Socket transmit data complete
-	gm02s_notif_type_utc_time,			//!< UTC Time information
-	gm02s_notif_type_upgrade_start,		//!< SFU upgrade status start
-	gm02s_notif_type_upgrade_success,	//!< SFU upgrade status success
-	gm02s_notif_type_upgrade_failure,	//!< SFU upgrade status fail
-	gm02s_notif_type_modem_crash		//!< Modem crash
+	gm02s_notif_type_open_done = 0,   		//!< GM02S configuration done.
+	gm02s_notif_type_close_done,   			//!< GM02S close done. (modem is shutdown)
+	gm02s_notif_type_modem_status, 			//!< GM02S Modem status
+	gm02s_notif_type_nw_status,  			//!< GSM02 network status
+	gm02s_notif_type_sim_status,  			//!< GSM02 SIM status
+	gm02s_notif_type_edrx_change,   		//!< eDRX change
+	gm02s_notif_type_socket_open,			//!< Socket opening result
+	gm02s_notif_type_socket_close,			//!< Socket close result
+	gm02s_notif_type_socket_rx_data,		//!< Socket Data received
+	gm02s_notif_type_socket_tx_done,		//!< Socket transmit data complete
+	gm02s_notif_type_utc_time,				//!< UTC Time information
+	gm02s_notif_type_fw_upgrade_status,		//!< Firmware upgrade status
+	gm02s_notif_type_modem_crash			//!< Modem crash
 } gm02s_notif_type_t;
 
 typedef struct {
@@ -367,16 +409,17 @@ typedef struct {
 } gm02s_notif_socket_mgmt_data_t;
 
 typedef union {
-	gm02s_edrx_info_t edrx_info;			//!< Belong to gm02s_notif_type_edrx_change
-	gm02s_notif_socket_rx_data_t rx_data;	//!< Belong to gm02s_notif_type_socket_rx_data
-	gm02s_notif_socket_mgmt_data_t sock_mgmt;//!< Belong to gm02s_notif_type_socket_open, gm02s_notif_type_socket_close
-	gm02s_nw_status_info_t nw_info;			//!< Belong to gm02s_notif_type_nw_status
-	gm02s_utc_time_info_t utc_time;			//!< Belong to gm02s_notif_type_utc_time
-	gm02s_sim_status_t sim_status;			//!< Belong to gm02s_notif_type_sim_status
-	gm02s_modem_status_t modem_status;		//!< Belong to gm02s_notif_type_modem_status
-	bool connected;							//!< Belong to gm02s_notif_type_connected. true: connected, false: disconnected
-	bool power;								//!< Belong to gm02s_notif_type_power_state. true: power on, false: power off
-	bool config_success;					//!< Belong to gm02s_notif_type_config_done. true: power on, false: power off
+	gm02s_edrx_info_t edrx_info;				//!< Belong to gm02s_notif_type_edrx_change
+	gm02s_notif_socket_rx_data_t rx_data;		//!< Belong to gm02s_notif_type_socket_rx_data
+	gm02s_notif_socket_mgmt_data_t sock_mgmt;	//!< Belong to gm02s_notif_type_socket_open, gm02s_notif_type_socket_close
+	gm02s_nw_status_info_t nw_info;				//!< Belong to gm02s_notif_type_nw_status
+	gm02s_utc_time_info_t utc_time;				//!< Belong to gm02s_notif_type_utc_time
+	gm02s_sim_status_t sim_status;				//!< Belong to gm02s_notif_type_sim_status
+	gm02s_modem_status_t modem_status;			//!< Belong to gm02s_notif_type_modem_status
+	gm02s_fuota_status_info_t upgrade_status;	//!< Belong to gm02s_notif_type_fw_upgrade_status
+	bool connected;								//!< Belong to gm02s_notif_type_connected. true: connected, false: disconnected
+	bool power;									//!< Belong to gm02s_notif_type_power_state. true: power on, false: power off
+	bool config_success;						//!< Belong to gm02s_notif_type_config_done. true: power on, false: power off
 } gm02s_notif_data_t;
 
 typedef void (*gm02s_notif_callback_t)(gm02s_notif_type_t type, gm02s_notif_data_t* notif_data, void* arg);
@@ -576,7 +619,6 @@ typedef struct {
 
 typedef void (*gm02s_init_callback_t)(gm02s_init_result_t* response, void* arg);
 
-
 /*
  * ***************************************************************************
  * Service API
@@ -726,6 +768,20 @@ aos_result_t gm02s_drv_modem_get_rssi(gm02s_request_callback_t user_cb, void* us
 
 /**
  *
+ * \fn aos_result_t gm02s_drv_modem_fuota(char* firmware_url, gm02s_request_callback_t user_cb, void* user_arg)
+ *
+ * \brief Manage firmware update over the air (FUOTA)
+ *
+ * \param firmware_url firmware url on a remote server
+ * \param action manage fuota start, cancel, suspend or resume
+ *
+ * \return The status of the operation
+ *
+ */
+aos_result_t gm02s_drv_modem_fuota(char* firmware_url, gm02s_fuota_action_t action);
+
+/**
+ *
  * \fn bool gm02s_drv_is_busy(void)
  *
  * \brief Check whether the driver is busy
@@ -860,6 +916,30 @@ const char* gm02s_drv_notif_type_to_str(gm02s_notif_type_t type);
  * \return The c-string
  */
 const char* gm02s_drv_socket_result_to_str(gm02s_notif_socket_result_t result);
+
+/**
+ *
+ * \fn const char* gm02s_drv_fuota_error_to_str(gm02s_fuota_error_t error)
+ *
+ * \brief Convert FUOTA error result to a displayable C-string
+ *
+ * \param error FUOTA error result
+ *
+ * \return The c-string
+ */
+const char* gm02s_drv_fuota_error_to_str(gm02s_fuota_error_t error);
+
+/**
+ *
+ * \fn const char* gm02s_drv_fw_upgrade_status(gm02s_upgrade_status_t status)
+ *
+ * \brief Convert upgrade status result to a displayable C-string
+ *
+ * \param status ongoing upgrade status
+ *
+ * \return The c-string
+ */
+const char* gm02s_drv_fw_upgrade_status(gm02s_upgrade_status_t status);
 
 /**
  *

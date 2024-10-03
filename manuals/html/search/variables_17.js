@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['year_3225',['year',['../structaos__gnss__utc__time__t.html#aeebbaa34a4ea7c5ac00b5e107627b8bf',1,'aos_gnss_utc_time_t']]]
+  ['xpsr_3274',['xpsr',['../structaos__error__reg__info__t.html#a2048e8c8533c8a151535543c9f025e09',1,'aos_error_reg_info_t']]]
 ];

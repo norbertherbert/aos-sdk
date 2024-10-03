@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wifi_20scan_20service_4158',['WIFI scan service',['../group__srv__wifi.html',1,'']]]
+  ['wifi_20scan_20service_4214',['WIFI scan service',['../group__srv__wifi.html',1,'']]]
 ];

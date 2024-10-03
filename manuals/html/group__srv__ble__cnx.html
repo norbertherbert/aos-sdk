@@ -161,6 +161,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="memitem:ga5b0441d183b5aefb16bd459cffc465d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__srv__ble__cnx.html#ga5b0441d183b5aefb16bd459cffc465d0">srv_ble_connectivity_init_ble_services</a> (<a class="el" href="structaos__ble__app__data__t.html">aos_ble_app_data_t</a> *app_info)</td></tr>
 <tr class="memdesc:ga5b0441d183b5aefb16bd459cffc465d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize BLE services (standard and custom BLE services),.  <a href="group__srv__ble__cnx.html#ga5b0441d183b5aefb16bd459cffc465d0">More...</a><br /></td></tr>
 <tr class="separator:ga5b0441d183b5aefb16bd459cffc465d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae774975883cd6aa5d642c811c6e9bd60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__aos__system.html#gad3ecdc146fcc76996620c96df43c1b3f">aos_result_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__srv__ble__cnx.html#gae774975883cd6aa5d642c811c6e9bd60">srv_ble_connectivity_set_passkey</a> (bool enable, uint32_t passkey)</td></tr>
+<tr class="memdesc:gae774975883cd6aa5d642c811c6e9bd60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set BLE authentication requirement depending on pass key uses, The new Authentication requirement will take effect for new bonded devices, already bonded devices are not removed automatically.  <a href="group__srv__ble__cnx.html#gae774975883cd6aa5d642c811c6e9bd60">More...</a><br /></td></tr>
+<tr class="separator:gae774975883cd6aa5d642c811c6e9bd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -486,6 +489,44 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 <p>This function remove all bonded devices, it doesn't disconnect the device if connected. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool return success/failure </dd></dl>
+
+</div>
+</div>
+<a id="gae774975883cd6aa5d642c811c6e9bd60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae774975883cd6aa5d642c811c6e9bd60">&#9670;&nbsp;</a></span>srv_ble_connectivity_set_passkey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__aos__system.html#gad3ecdc146fcc76996620c96df43c1b3f">aos_result_t</a> srv_ble_connectivity_set_passkey </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>passkey</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set BLE authentication requirement depending on pass key uses, The new Authentication requirement will take effect for new bonded devices, already bonded devices are not removed automatically. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable</td><td>True if passkey should be used, False if not. </td></tr>
+    <tr><td class="paramname">passkey</td><td>passkey value, it should be a value between 000000 and 999999</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>result status </dd></dl>
 
 </div>
 </div>
