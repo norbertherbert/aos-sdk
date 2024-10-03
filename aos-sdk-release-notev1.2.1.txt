@@ -1,3 +1,22 @@
+Release 1.2.1
+=============
+Date
+----
+August, 13 2024.
+
+
+Bug fix
+-------
+AGM-548 AOS-SDK. BLE continuous tx test generates a watchdog reset
+Task
+AGM-549 AOS-SDK. Make release 1.2.1
+
+
+New feature
+-----------
+None
+
+
 Release 1.2.0
 =============
 Date
