@@ -404,7 +404,8 @@ typedef struct {
 typedef struct {
 	char sim_iccid[GM02S_ICCID_LEN];			//!< SIM ICCID
 	char sim_euiccid[GM02S_EUICCID_LEN];		//!< SIM embedded universal ICCID (for e-sim only)
-} gm02s_sim_iccid_t;
+	char sim_imsi[GM02S_IMSI_LEN];				//!< SIM International Mobile Subscriber Identifier
+} gm02s_sim_id_t;
 
 typedef union {
 	gm02s_socket_cfg_info_t socket_cfg_info;	//!< Socket configuration
@@ -414,7 +415,7 @@ typedef union {
 	int8_t rssi;								//!< Signal quality indication [-113 .. -57] dBm. Value 0: Indicates Not know or undetectable
 	gm02s_nw_status_info_t nw_info;				//!< Network status. Same information than the notification
 	gm02s_rxtx_stats_t stats;					//!< Modem RXTX statistics
-	gm02s_sim_iccid_t sim_iccid_info;			//!< ICCID and EUICCID of the e-SIM
+	gm02s_sim_id_t sim_id;						//!< ICCID, EUICCID and IMSI of the SIM in use
 } gm02s_response_data_t;
 
 typedef struct {
@@ -994,16 +995,16 @@ const char* gm02s_drv_sim_status_to_str(gm02s_sim_status_t sim_status);
 
 /**
  *
- * \fn const aos_result_t gm02s_drv_get_iccid(gm02s_request_callback_t user_cb, void* user_arg);
+ * \fn aos_result_t gm02s_drv_get_sim_info(gm02s_request_callback_t user_cb, void* user_arg);
  *
- * \brief Get the ICCID and the EUICCID of the e-SIM connected to SIM1 interface
+ * \brief Get the ICCID, EUICCID and IMSI of the SIM in use.
  *
  * \param user_cb User callback to receive the command result status and data. May be NULL
  * \param user_arg User argument passed along to the user callback. Opaque for the driver.
  *
  * \return The status of the operation
  */
-aos_result_t gm02s_drv_get_iccid(gm02s_request_callback_t user_cb, void* user_arg);
+aos_result_t gm02s_drv_get_sim_info(gm02s_request_callback_t user_cb, void* user_arg);
 
 /**
  *

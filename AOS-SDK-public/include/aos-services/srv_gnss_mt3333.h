@@ -389,6 +389,15 @@ srv_gnss_mt3333_state_t srv_gnss_mt3333_get_state(void);
  */
 aos_result_t srv_gnss_mt3333_get_version(srv_gnss_mt3333_query_callback_t callback, void* user_arg);
 
+/*!
+ * \fn bool srv_gnss_mt3333_is_acq_in_progress(void)
+ *
+ * \brief Check if the MT3333 is acquising a position
+ *
+ * \return True is a position is being acquired, false otherwise
+ *
+ */
+bool srv_gnss_mt3333_is_acq_in_progress(void);
 
 /*!
  * \fn aos_result_t srv_gnss_mt3333_get_almanac_gps(srv_gnss_mt3333_query_callback_t callback, void* user_arg, uint16_t svid)
@@ -452,6 +461,16 @@ aos_result_t srv_gnss_mt3333_convert_almanac_gps_entry(aos_gnss_almanac_entry_t*
  * \return The power
  */
 aos_gnss_power_t srv_gnss_mt3333_get_power(void);
+
+/*!
+ * \fn aos_result_t srv_gnss_mt3333_set_power(aos_gnss_power_t power)
+ *
+ * \brief Set the power
+ * \param power Power to set
+ *
+ * \return The power
+ */
+aos_result_t srv_gnss_mt3333_set_power(aos_gnss_power_t power);
 
 /*!
  * \fn  aos_gnss_counters_t* srv_gnss_mt3333_get_stats(void)

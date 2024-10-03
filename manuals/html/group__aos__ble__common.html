@@ -113,10 +113,6 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__common.html#gae7b77b8db8e331d28e9cfc802b8951f7">CUSTOM_SERVICE_BITMASK</a>&#160;&#160;&#160;(0xFFC0)</td></tr>
 <tr class="memdesc:gae7b77b8db8e331d28e9cfc802b8951f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom services are in bit 6 to 15 (refer to BLE_services_bit_mask_t) <br /></td></tr>
 <tr class="separator:gae7b77b8db8e331d28e9cfc802b8951f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga65d5382341d5a38c5a051ac7198ddb03"><td class="memItemLeft" align="right" valign="top"><a id="ga65d5382341d5a38c5a051ac7198ddb03"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__common.html#ga65d5382341d5a38c5a051ac7198ddb03">BLE_GAP_ADDR_LEN</a>&#160;&#160;&#160;(6)</td></tr>
-<tr class="memdesc:ga65d5382341d5a38c5a051ac7198ddb03"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE address length. <br /></td></tr>
-<tr class="separator:ga65d5382341d5a38c5a051ac7198ddb03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabc7360fb839f983b6a52643d80eced5b"><td class="memItemLeft" align="right" valign="top"><a id="gabc7360fb839f983b6a52643d80eced5b"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__common.html#gabc7360fb839f983b6a52643d80eced5b">EDDYSTONE_SERVCE_UUID</a>&#160;&#160;&#160;0xFEAA</td></tr>
 <tr class="memdesc:gabc7360fb839f983b6a52643d80eced5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eddystone beacon service UUID. <br /></td></tr>
@@ -141,12 +137,19 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__common.html#ga1eb3b7c0b7543026ea4096133d9a0ba6">SERIAL_NUMBER_ID_LEN</a>&#160;&#160;&#160;<a class="el" href="group__aos__system.html#ga766fc2eb79254e6075b19bdcab720013">AOS_PROVISIONING_EUI_SIZE</a></td></tr>
 <tr class="memdesc:ga1eb3b7c0b7543026ea4096133d9a0ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The actual size of the field serial number string in DIS service. <br /></td></tr>
 <tr class="separator:ga1eb3b7c0b7543026ea4096133d9a0ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga311bb8865a6f83c96b91802febf99a7e"><td class="memItemLeft" align="right" valign="top"><a id="ga311bb8865a6f83c96b91802febf99a7e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__common.html#ga311bb8865a6f83c96b91802febf99a7e">BLE_MAC_ADDR_SIZE</a>&#160;&#160;&#160;BD_ADDR_SIZE</td></tr>
+<tr class="memdesc:ga311bb8865a6f83c96b91802febf99a7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the BLE MAC address. <br /></td></tr>
+<tr class="separator:ga311bb8865a6f83c96b91802febf99a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:gaca25692bb2c5ffe5f588b46d31e4acdb"><td class="memItemLeft" align="right" valign="top">typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__common.html#gaca25692bb2c5ffe5f588b46d31e4acdb">custom_srvc_char_value_init_cb_t</a>(<a class="el" href="structble__custom__srvc__init__data__t.html">ble_custom_srvc_init_data_t</a> *app_info)</td></tr>
-<tr class="memdesc:gaca25692bb2c5ffe5f588b46d31e4acdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call back function for custom characteristics value initialization. In the AOS this function is called, when the BLE is initialized, To set the initialized characteristics value.  <a href="group__aos__ble__common.html#gaca25692bb2c5ffe5f588b46d31e4acdb">More...</a><br /></td></tr>
-<tr class="separator:gaca25692bb2c5ffe5f588b46d31e4acdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga16b4d16c93f835a56c24bf61093e126a"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__common.html#ga16b4d16c93f835a56c24bf61093e126a">aos_ble_std_services_callback_t</a>) (<a class="el" href="group__aos__ble__common.html#gabef326c1d9488ea904615b91d8a244a9">aos_ble_std_services_req_t</a> req, void *arg, uint8_t *len)</td></tr>
+<tr class="memdesc:ga16b4d16c93f835a56c24bf61093e126a"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE standard services callback. bridge between app layer and aos standard ble services.  <a href="group__aos__ble__common.html#ga16b4d16c93f835a56c24bf61093e126a">More...</a><br /></td></tr>
+<tr class="separator:ga16b4d16c93f835a56c24bf61093e126a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga32e9842d5454897c36ccd1b5c9f9f11b"><td class="memItemLeft" align="right" valign="top">typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__common.html#ga32e9842d5454897c36ccd1b5c9f9f11b">custom_srvc_char_value_init_cb_t</a>(<a class="el" href="structble__custom__srvc__init__data__t.html">ble_custom_srvc_init_data_t</a> *app_info)</td></tr>
+<tr class="memdesc:ga32e9842d5454897c36ccd1b5c9f9f11b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call back function for custom characteristics value initialization. In the AOS this function is called, when the BLE is initialized, To set the initialized characteristics value.  <a href="group__aos__ble__common.html#ga32e9842d5454897c36ccd1b5c9f9f11b">More...</a><br /></td></tr>
+<tr class="separator:ga32e9842d5454897c36ccd1b5c9f9f11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -174,17 +177,53 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:gafa231099d07583c3ed0981e0bb665f55"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE services bit mask.  <a href="group__aos__ble__common.html#gafa231099d07583c3ed0981e0bb665f55">More...</a><br /></td></tr>
 <tr class="separator:gafa231099d07583c3ed0981e0bb665f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabef326c1d9488ea904615b91d8a244a9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__common.html#gabef326c1d9488ea904615b91d8a244a9">aos_ble_std_services_req_t</a> { <br />
+&#160;&#160;<a class="el" href="group__aos__ble__common.html#ggabef326c1d9488ea904615b91d8a244a9aee106fb5bea1e4aa02d249944a905042">aos_ble_std_srv_ias_alert</a>, 
+<a class="el" href="group__aos__ble__common.html#ggabef326c1d9488ea904615b91d8a244a9a12c5fbe951b1ca229b82e389646b5487">aos_ble_std_srv_lls_alert</a>, 
+<a class="el" href="group__aos__ble__common.html#ggabef326c1d9488ea904615b91d8a244a9af0b62e47477eafc3c3cd2c8288c9fe16">aos_ble_std_srv_tps_read</a>, 
+<a class="el" href="group__aos__ble__common.html#ggabef326c1d9488ea904615b91d8a244a9a84893cb18c91926409baa114d734b83c">aos_ble_std_srv_bas_level_read</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__aos__ble__common.html#ggabef326c1d9488ea904615b91d8a244a9a23379bcd03d89045d643a089c05f3591">aos_ble_std_srv_bas_power_state_read</a>, 
+<a class="el" href="group__aos__ble__common.html#ggabef326c1d9488ea904615b91d8a244a9af30ce5c88bf20e6c5f2b2c5d78faf631">aos_ble_std_srv_ess_temperature_read</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:gabef326c1d9488ea904615b91d8a244a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">events generated by standard BLE services to the app layer to request data  <a href="group__aos__ble__common.html#gabef326c1d9488ea904615b91d8a244a9">More...</a><br /></td></tr>
+<tr class="separator:gabef326c1d9488ea904615b91d8a244a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="gaca25692bb2c5ffe5f588b46d31e4acdb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaca25692bb2c5ffe5f588b46d31e4acdb">&#9670;&nbsp;</a></span>custom_srvc_char_value_init_cb_t</h2>
+<a id="ga16b4d16c93f835a56c24bf61093e126a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga16b4d16c93f835a56c24bf61093e126a">&#9670;&nbsp;</a></span>aos_ble_std_services_callback_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void custom_srvc_char_value_init_cb_t</td>
+          <td class="memname">typedef void(* aos_ble_std_services_callback_t) (<a class="el" href="group__aos__ble__common.html#gabef326c1d9488ea904615b91d8a244a9">aos_ble_std_services_req_t</a> req, void *arg, uint8_t *len)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BLE standard services callback. bridge between app layer and aos standard ble services. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">req</td><td>BLE standard services request type </td></tr>
+    <tr><td class="paramname">arg</td><td>an argument that depend on the request, it could be used as input or output data and the type changes: aos_ble_std_srv_ias_alert: arg is an uint8_t input, for value description refer to <a href="https://www.bluetooth.com/specifications/specs/immediate-alert-service-1-0/">https://www.bluetooth.com/specifications/specs/immediate-alert-service-1-0/</a> aos_ble_std_srv_lls_alert: arg is an uint8_t input, for value description refer to <a href="https://www.bluetooth.com/specifications/specs/link-loss-service-1-0/">https://www.bluetooth.com/specifications/specs/link-loss-service-1-0/</a> aos_ble_std_srv_tps_read: arg is an int8_t output, for value description refer to <a href="https://www.bluetooth.com/specifications/specs/tx-power-service-1-0/">https://www.bluetooth.com/specifications/specs/tx-power-service-1-0/</a> aos_ble_std_srv_bas_level_read: arg is an uint8_t output, for value description refer to <a href="https://www.bluetooth.com/specifications/specs/battery-service-1-0/">https://www.bluetooth.com/specifications/specs/battery-service-1-0/</a> aos_ble_std_srv_bas_power_state_read: arg is an uint8_t output, for value description refer to <a href="https://www.bluetooth.com/specifications/specs/battery-service-1-0/">https://www.bluetooth.com/specifications/specs/battery-service-1-0/</a> aos_ble_std_srv_ess_temperature_read: arg is an int16_t output, for value description refer to <a href="https://www.bluetooth.com/specifications/specs/environmental-sensing-service-1-0/">https://www.bluetooth.com/specifications/specs/environmental-sensing-service-1-0/</a></td></tr>
+    <tr><td class="paramname">len</td><td>length of arg in case of table or string </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga32e9842d5454897c36ccd1b5c9f9f11b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga32e9842d5454897c36ccd1b5c9f9f11b">&#9670;&nbsp;</a></span>custom_srvc_char_value_init_cb_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void custom_srvc_char_value_init_cb_t(<a class="el" href="structble__custom__srvc__init__data__t.html">ble_custom_srvc_init_data_t</a> *app_info)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -245,6 +284,36 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="ggafa231099d07583c3ed0981e0bb665f55a98e890fa4a284c4a39077d2de01091a8"></a>CUSTOM_9_SERVICE&#160;</td><td class="fielddoc"><p>Custom 9 service bit-mask. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggafa231099d07583c3ed0981e0bb665f55a97024e6a854aee0b5b08ff5ef9c59093"></a>CUSTOM_10_SERVICE&#160;</td><td class="fielddoc"><p>Custom 10 service bit-mask. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="gabef326c1d9488ea904615b91d8a244a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabef326c1d9488ea904615b91d8a244a9">&#9670;&nbsp;</a></span>aos_ble_std_services_req_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__aos__ble__common.html#gabef326c1d9488ea904615b91d8a244a9">aos_ble_std_services_req_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>events generated by standard BLE services to the app layer to request data </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggabef326c1d9488ea904615b91d8a244a9aee106fb5bea1e4aa02d249944a905042"></a>aos_ble_std_srv_ias_alert&#160;</td><td class="fielddoc"><p>Immediate Alert received from client application. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabef326c1d9488ea904615b91d8a244a9a12c5fbe951b1ca229b82e389646b5487"></a>aos_ble_std_srv_lls_alert&#160;</td><td class="fielddoc"><p>Link Loss Alert received from client application. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabef326c1d9488ea904615b91d8a244a9af0b62e47477eafc3c3cd2c8288c9fe16"></a>aos_ble_std_srv_tps_read&#160;</td><td class="fielddoc"><p>Tx power request received from client application. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabef326c1d9488ea904615b91d8a244a9a84893cb18c91926409baa114d734b83c"></a>aos_ble_std_srv_bas_level_read&#160;</td><td class="fielddoc"><p>Battery level read request received from client application. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabef326c1d9488ea904615b91d8a244a9a23379bcd03d89045d643a089c05f3591"></a>aos_ble_std_srv_bas_power_state_read&#160;</td><td class="fielddoc"><p>Battery power state read request received from client application. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggabef326c1d9488ea904615b91d8a244a9af30ce5c88bf20e6c5f2b2c5d78faf631"></a>aos_ble_std_srv_ess_temperature_read&#160;</td><td class="fielddoc"><p>Environment sensing temperature read request received from client application. </p>
 </td></tr>
 </table>
 

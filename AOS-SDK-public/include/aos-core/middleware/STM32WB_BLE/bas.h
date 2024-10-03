@@ -92,13 +92,13 @@ tBleStatus bas_init(void);
 tBleStatus bas_update_char(uint16_t uuid, uint8_t *payload);
 
 /*!
- * \fn void BAS_Notification(BAS_Notification_evt_t * pNotification)
+ * \fn void aos_ble_service_bas_app_notification(BAS_Notification_evt_t * pNotification)
  *
  * \brief Battery service notification function
  *
  * \param pNotification notification event
  */
-void bas_app_notification(BAS_Notification_evt_t * pNotification);
+void aos_ble_service_bas_app_notification(BAS_Notification_evt_t * pNotification);
 
 /*! @}*/
 #ifdef __cplusplus

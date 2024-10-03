@@ -17,7 +17,7 @@ extern "C" {
 
 
 /*!
- * \defgroup WIFI scan service
+ * \defgroup srv_wifi WIFI scan service
  *
  * \addtogroup srv_wifi
  * @{

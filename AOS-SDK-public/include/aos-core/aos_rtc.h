@@ -111,6 +111,10 @@ typedef enum {
 	aos_rtc_alarm_b,		//!< RTC Alarm B
 }aos_rtc_alarm_type_t;
 
+/*!
+ * \brief time variable definition
+ */
+typedef uint64_t aos_rtc_time_t;
 
 
 /*!
@@ -143,7 +147,7 @@ uint32_t aos_rtc_get_min_timeout( void );
  * \param milliseconds Time in milliseconds
  * \retval returns time in timer ticks
  */
-uint32_t aos_rtc_ms_to_tick( aos_timer_time_t milliseconds );
+aos_rtc_time_t aos_rtc_ms_to_tick( aos_rtc_time_t milliseconds );
 
 /*!
  * \brief converts time in ticks to time in ms
@@ -151,14 +155,14 @@ uint32_t aos_rtc_ms_to_tick( aos_timer_time_t milliseconds );
  * \param tick time in timer ticks
  * \retval returns time in milliseconds
  */
-aos_timer_time_t aos_rtc_tick_to_ms( uint32_t tick );
+aos_rtc_time_t aos_rtc_tick_to_ms( aos_rtc_time_t tick );
 
 /*!
  * \brief Performs a delay of milliseconds by polling RTC
  *
  * \param milliseconds Delay in ms
  */
-void aos_rtc_delay_ms( aos_timer_time_t milliseconds );
+void aos_rtc_delay_ms( uint32_t milliseconds );
 
 /*!
  * \brief Sets the alarm
@@ -202,14 +206,14 @@ bool aos_rtc_alarm_is_started(aos_rtc_alarm_type_t alarm_type);
  *
  * \retval value Timer reference value in ticks
  */
-uint32_t aos_rtc_set_alarm_a_context();
+aos_rtc_time_t aos_rtc_set_alarm_a_context();
 
 /*!
  * \brief Gets the alarm A time reference
  *
  * \retval value Alarm value in ticks
  */
-uint32_t aos_rtc_get_alarm_a_context();
+aos_rtc_time_t aos_rtc_get_alarm_a_context();
 
 /*!
  * \brief Gets the system time with the number of seconds elapsed since epoch
@@ -224,35 +228,35 @@ uint32_t aos_rtc_get_calendar_time( uint16_t *milliseconds );
  *
  * \retval time returns current time (milliseconds)
  */
-aos_timer_time_t aos_rtc_get_current_time_ms( void );
+aos_rtc_time_t aos_rtc_get_current_time_ms( void );
 
 /*!
  * \brief Read the current time in seconds
  *
  * \retval time returns current time in seconds
  */
-aos_timer_time_t aos_rtc_get_current_time_sec( void );
+aos_rtc_time_t aos_rtc_get_current_time_sec( void );
 
 /*!
  * \brief Get the RTC time value in ticks
  *
  * \retval RTC Timer value in ticks
  */
-uint32_t aos_rtc_get_current_time_ticks( void );
+aos_rtc_time_t aos_rtc_get_current_time_ticks( void );
 
 /*!
  * \brief Get the RTC value in step of 100us
  *
  * \retval RTC Timer value
  */
-uint32_t aos_rtc_get_current_time_100us( void );
+aos_rtc_time_t aos_rtc_get_current_time_100us( void );
 
 /*!
  * \brief Get the RTC alarm A elapsed time since the last Alarm was set
  *
  * \retval RTC Elapsed time since the last alarm in ticks.
  */
-uint32_t aos_rtc_get_alarm_a_elapsed_time( void );
+aos_rtc_time_t aos_rtc_get_alarm_a_elapsed_time( void );
 
 /*!
  * \brief Write a data to a the RTC backup register
@@ -280,7 +284,7 @@ uint32_t aos_rtc_backup_read(aos_rtc_backup_register_t reg);
  *
  * \retval Compensated time period
  */
-aos_timer_time_t aos_rtc_temp_compensation( aos_timer_time_t period, float temperature );
+aos_rtc_time_t aos_rtc_temp_compensation( aos_rtc_time_t period, float temperature );
 
 /*!
  * \brief Add two system time
@@ -339,7 +343,7 @@ aos_rtc_systime_t aos_rtc_systime_get_mcu_time( void );
  *
  * \retval The corresponding number of milliseconds
  */
-aos_timer_time_t aos_rtc_systime_to_ms( aos_rtc_systime_t systime );
+aos_rtc_time_t aos_rtc_systime_to_ms( aos_rtc_systime_t systime );
 
 /*!
  * \brief Convert the input time in milliseconds to the system time format
@@ -348,7 +352,7 @@ aos_timer_time_t aos_rtc_systime_to_ms( aos_rtc_systime_t systime );
  *
  * \retval The equivalent in system time format
  */
-aos_rtc_systime_t aos_rtc_systime_from_ms( aos_timer_time_t time_ms );
+aos_rtc_systime_t aos_rtc_systime_from_ms( aos_rtc_time_t time_ms );
 
 /*!
  * \brief Convert the usual UNIX time structure to the number of seconds

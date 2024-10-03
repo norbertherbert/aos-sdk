@@ -16,7 +16,7 @@ extern "C"
 #endif
 
 /*!
- * \defgroup xmodem_srv xmodem service
+ * \defgroup xmodem_srv xModem service
  *
  * \addtogroup xmodem_srv
  * @{

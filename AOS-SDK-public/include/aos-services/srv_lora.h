@@ -16,7 +16,7 @@ extern "C" {
 
 
 /*!
- * \defgroup LoRa service
+ * \defgroup srv_lora LoRa service
  *
  * \addtogroup srv_lora
  * @{

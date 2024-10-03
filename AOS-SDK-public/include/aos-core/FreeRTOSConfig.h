@@ -93,7 +93,7 @@
 #define configCHECK_FOR_STACK_OVERFLOW 2		// Make sure we catch them all !
 
 // Min tick to sleep
-#define configEXPECTED_IDLE_TIME_BEFORE_SLEEP	2	// FreeRTOS ticks (= ms)
+#define configEXPECTED_IDLE_TIME_BEFORE_SLEEP	4	// FreeRTOS ticks (= ms)
 
 /* Co-routine definitions. */
 #define configUSE_CO_ROUTINES                    0
@@ -103,7 +103,7 @@
 #define configUSE_TIMERS                         1
 #define configTIMER_TASK_PRIORITY                ( AOS_THREAD_PRIO_RTOS_TIMERS )
 #define configTIMER_QUEUE_LENGTH                 48
-#define configTIMER_TASK_STACK_DEPTH             4096
+#define configTIMER_TASK_STACK_DEPTH             (4096 / sizeof(uint32_t))
 
 #define configTIMER_SERVICE_TASK_NAME			"RTOS timers"
 

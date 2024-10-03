@@ -113,7 +113,7 @@ void hci_resume_flow(void);
  */
 
 /**
- * @brief  This process shall be called by the scheduler each time it is requested with hci_notify_asynch_evt()
+ * @brief  This process shall be called by the scheduler each time it is requested with aos_ble_core_hci_notify_asynch_evt()
  *         This process may send an ACI/HCI command when the svc_ctl.c module is used
  *
  * @param  None

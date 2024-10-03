@@ -172,6 +172,16 @@ uint64_t srv_ble_beaconing_get_power_consumption(void);
  */
 void srv_ble_beaconing_clear_consumption(void);
 
+/*!
+ * \fn void srv_ble_beaconing_tx_power_updated(uint8_t pow_level)
+ *
+ * \brief Update TX power level used this implies changing beaconing consumption.
+ * The user should call this function each time BLE tx power is updated.
+ *
+ * \param pow_level power level used to process new power consumption value
+ */
+void srv_ble_beaconing_tx_power_updated(uint8_t pow_level);
+
 /*! @}*/
 #ifdef __cplusplus
 }

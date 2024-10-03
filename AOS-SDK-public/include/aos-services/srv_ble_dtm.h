@@ -69,7 +69,7 @@ typedef enum {
 	srv_ble_dtm_phy_le_1m = 1,		//!< Transmitter set to use the LE 1M PHY
 	srv_ble_dtm_phy_le_2m,			//!< Transmitter set to use the LE 2M PHY
 	srv_ble_dtm_phy_coded_s8,		//!< Transmitter set to use the LE Coded PHY with S=8 data coding
-	srv_ble_dtm_phy_coded_s2,		//!<Transmitter set to use the LE Coded PHY with S=2 data coding
+	srv_ble_dtm_phy_coded_s2,		//!< Transmitter set to use the LE Coded PHY with S=2 data coding
 	srv_ble_dtm_phy_count,
 } srv_ble_dtm_phy_t;
 
@@ -140,9 +140,9 @@ typedef uint32_t srv_ble_test_count_result_t;	//!< Total number of transmitted/r
 void srv_ble_dtm_init(void);
 
 /*!
- * \brief Set test parameters
+ * \brief Get Tx or Tx test mode results
  *
- * \return ongoing test result
+ * \return  Total number of transmitted/received packets during TX/RX test
  *
  */
 srv_ble_test_count_result_t srv_ble_dtm_get_result(void);

@@ -29,7 +29,7 @@
  *  + A GAP event is not relevant to either a Service or a Client. It is sent to the application
  *  + In case the application does not want to take benefit from the ble_controller, it could bypass it. In that case,
  *  the application shall:
- *    - call  SVCCTL_Init() to initialize the BLE core device (or implement on its own what is inside that function
+ *    - call  svc_ctl_init() to initialize the BLE core device (or implement on its own what is inside that function
  *    - implement TLHCI_UserEvtRx() which is the notification from the HCI layer to report all events (GATT/GAP).
  */
 
@@ -70,7 +70,7 @@ extern "C" {
    * @param  app_info pointer to application BLE data
    * @retval None
    */
-  void SVCCTL_Init( aos_ble_app_data_t *app_info );
+  void svc_ctl_init( aos_ble_app_data_t *app_info );
 
   /**
    * @brief  This API registers a handler to be called when a GATT user event is received from the BLE core device. When

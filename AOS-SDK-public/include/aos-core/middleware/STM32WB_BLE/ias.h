@@ -89,13 +89,13 @@ tBleStatus ias_init(void);
 tBleStatus ias_update_char(uint16_t uuid, uint8_t *payload);
 
 /*!
- * \fn void ias_app_notification(BAS_Notification_evt_t * pNotification)
+ * \fn void aos_ble_service_ias_app_notification(IAS_App_Notification_evt_t * pNotification)
  *
  * \brief Immediate Alert service notification function
  *
  * \param pNotification notification event
  */
-void ias_app_notification(IAS_App_Notification_evt_t *pNotification);
+void aos_ble_service_ias_app_notification(IAS_App_Notification_evt_t *pNotification);
 
 
 /*! @}*/

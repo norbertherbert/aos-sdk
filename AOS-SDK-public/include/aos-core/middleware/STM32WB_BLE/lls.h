@@ -90,13 +90,13 @@ tBleStatus lls_init(void);
 tBleStatus lls_update_char(uint16_t uuid, uint8_t *payload);
 
 /*!
- * \fn void lls_app_notification(BAS_Notification_evt_t * pNotification)
+ * \fn void lls_app_notification(LLS_App_Notification_evt_t * pNotification)
  *
  * \brief Link Loss service notification function
  *
  * \param pNotification notification event
  */
-void lls_app_notification(LLS_App_Notification_evt_t *pNotification);
+void aos_ble_service_lls_app_notification(LLS_App_Notification_evt_t *pNotification);
 
 
 /*! @}*/

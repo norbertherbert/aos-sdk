@@ -65,6 +65,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -190,6 +191,13 @@ Macros</h2></td></tr>
 <tr class="memdesc:gadd7a9bbd26bd378f707e1cf9df45f61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of seconds elapsed between Unix and GPS epoch. <br /></td></tr>
 <tr class="separator:gadd7a9bbd26bd378f707e1cf9df45f61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga8e6f25b54f8792b909a32399fd827588"><td class="memItemLeft" align="right" valign="top"><a id="ga8e6f25b54f8792b909a32399fd827588"></a>
+typedef uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a></td></tr>
+<tr class="memdesc:ga8e6f25b54f8792b909a32399fd827588"><td class="mdescLeft">&#160;</td><td class="mdescRight">time variable definition <br /></td></tr>
+<tr class="separator:ga8e6f25b54f8792b909a32399fd827588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ga5fb80f4cb5c499733a842b62d0f4f190"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga5fb80f4cb5c499733a842b62d0f4f190">aos_rtc_backup_register_t</a> { <a class="el" href="group__rtc__facility.html#gga5fb80f4cb5c499733a842b62d0f4f190ac4c8ac73dc9448dbdbc3b7a808db2ba9">aos_rtc_backup_register_res0</a> = 0, 
@@ -220,15 +228,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ga2d9c626d86693d3df516c8e2fb16be36"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga2d9c626d86693d3df516c8e2fb16be36">aos_rtc_get_min_timeout</a> (void)</td></tr>
 <tr class="memdesc:ga2d9c626d86693d3df516c8e2fb16be36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum timeout value.  <a href="group__rtc__facility.html#ga2d9c626d86693d3df516c8e2fb16be36">More...</a><br /></td></tr>
 <tr class="separator:ga2d9c626d86693d3df516c8e2fb16be36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7c96e923d2e8d0c1db4fe40bb5b77c8e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga7c96e923d2e8d0c1db4fe40bb5b77c8e">aos_rtc_ms_to_tick</a> (<a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a> milliseconds)</td></tr>
-<tr class="memdesc:ga7c96e923d2e8d0c1db4fe40bb5b77c8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">converts time in ms to time in ticks  <a href="group__rtc__facility.html#ga7c96e923d2e8d0c1db4fe40bb5b77c8e">More...</a><br /></td></tr>
-<tr class="separator:ga7c96e923d2e8d0c1db4fe40bb5b77c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga69691ba033a2a60622cf50aa63e4c389"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga69691ba033a2a60622cf50aa63e4c389">aos_rtc_tick_to_ms</a> (uint32_t tick)</td></tr>
-<tr class="memdesc:ga69691ba033a2a60622cf50aa63e4c389"><td class="mdescLeft">&#160;</td><td class="mdescRight">converts time in ticks to time in ms  <a href="group__rtc__facility.html#ga69691ba033a2a60622cf50aa63e4c389">More...</a><br /></td></tr>
-<tr class="separator:ga69691ba033a2a60622cf50aa63e4c389"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae0a772c03e406c2d2e979bb43e929c2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#gae0a772c03e406c2d2e979bb43e929c2d">aos_rtc_delay_ms</a> (<a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a> milliseconds)</td></tr>
-<tr class="memdesc:gae0a772c03e406c2d2e979bb43e929c2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a delay of milliseconds by polling RTC.  <a href="group__rtc__facility.html#gae0a772c03e406c2d2e979bb43e929c2d">More...</a><br /></td></tr>
-<tr class="separator:gae0a772c03e406c2d2e979bb43e929c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4522f69ab51a18174470845dce00a84d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga4522f69ab51a18174470845dce00a84d">aos_rtc_ms_to_tick</a> (<a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a> milliseconds)</td></tr>
+<tr class="memdesc:ga4522f69ab51a18174470845dce00a84d"><td class="mdescLeft">&#160;</td><td class="mdescRight">converts time in ms to time in ticks  <a href="group__rtc__facility.html#ga4522f69ab51a18174470845dce00a84d">More...</a><br /></td></tr>
+<tr class="separator:ga4522f69ab51a18174470845dce00a84d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa016b33f852a0304e1ad8da9a711d165"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#gaa016b33f852a0304e1ad8da9a711d165">aos_rtc_tick_to_ms</a> (<a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a> tick)</td></tr>
+<tr class="memdesc:gaa016b33f852a0304e1ad8da9a711d165"><td class="mdescLeft">&#160;</td><td class="mdescRight">converts time in ticks to time in ms  <a href="group__rtc__facility.html#gaa016b33f852a0304e1ad8da9a711d165">More...</a><br /></td></tr>
+<tr class="separator:gaa016b33f852a0304e1ad8da9a711d165"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga731911eb28b61ee69845f216948f1b71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga731911eb28b61ee69845f216948f1b71">aos_rtc_delay_ms</a> (uint32_t milliseconds)</td></tr>
+<tr class="memdesc:ga731911eb28b61ee69845f216948f1b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a delay of milliseconds by polling RTC.  <a href="group__rtc__facility.html#ga731911eb28b61ee69845f216948f1b71">More...</a><br /></td></tr>
+<tr class="separator:ga731911eb28b61ee69845f216948f1b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga98e62ae1e36e02070558baa6b0b9ffd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga98e62ae1e36e02070558baa6b0b9ffd7">aos_rtc_set_alarm</a> (<a class="el" href="group__rtc__facility.html#gaac740d65b3c79562c933f7c83fe56bed">aos_rtc_alarm_type_t</a> alarm_type, uint32_t timeout)</td></tr>
 <tr class="memdesc:ga98e62ae1e36e02070558baa6b0b9ffd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the alarm.  <a href="group__rtc__facility.html#ga98e62ae1e36e02070558baa6b0b9ffd7">More...</a><br /></td></tr>
 <tr class="separator:ga98e62ae1e36e02070558baa6b0b9ffd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -241,39 +249,39 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5dff4acdf9ce7be51d76a70365a056fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga5dff4acdf9ce7be51d76a70365a056fd">aos_rtc_alarm_is_started</a> (<a class="el" href="group__rtc__facility.html#gaac740d65b3c79562c933f7c83fe56bed">aos_rtc_alarm_type_t</a> alarm_type)</td></tr>
 <tr class="memdesc:ga5dff4acdf9ce7be51d76a70365a056fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if an alarm is started.  <a href="group__rtc__facility.html#ga5dff4acdf9ce7be51d76a70365a056fd">More...</a><br /></td></tr>
 <tr class="separator:ga5dff4acdf9ce7be51d76a70365a056fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaa84843c677e79586efeb61d8336566e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#gaaa84843c677e79586efeb61d8336566e">aos_rtc_set_alarm_a_context</a> ()</td></tr>
-<tr class="memdesc:gaaa84843c677e79586efeb61d8336566e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the alarm A time reference.  <a href="group__rtc__facility.html#gaaa84843c677e79586efeb61d8336566e">More...</a><br /></td></tr>
-<tr class="separator:gaaa84843c677e79586efeb61d8336566e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga439a15f6a70ddca1f238027c535b9a75"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga439a15f6a70ddca1f238027c535b9a75">aos_rtc_get_alarm_a_context</a> ()</td></tr>
-<tr class="memdesc:ga439a15f6a70ddca1f238027c535b9a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the alarm A time reference.  <a href="group__rtc__facility.html#ga439a15f6a70ddca1f238027c535b9a75">More...</a><br /></td></tr>
-<tr class="separator:ga439a15f6a70ddca1f238027c535b9a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga591e9b5bba8b327f22a982b0d0ab0877"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga591e9b5bba8b327f22a982b0d0ab0877">aos_rtc_set_alarm_a_context</a> ()</td></tr>
+<tr class="memdesc:ga591e9b5bba8b327f22a982b0d0ab0877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the alarm A time reference.  <a href="group__rtc__facility.html#ga591e9b5bba8b327f22a982b0d0ab0877">More...</a><br /></td></tr>
+<tr class="separator:ga591e9b5bba8b327f22a982b0d0ab0877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga580e7e31771c62f4c75357226fb0f2d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga580e7e31771c62f4c75357226fb0f2d5">aos_rtc_get_alarm_a_context</a> ()</td></tr>
+<tr class="memdesc:ga580e7e31771c62f4c75357226fb0f2d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the alarm A time reference.  <a href="group__rtc__facility.html#ga580e7e31771c62f4c75357226fb0f2d5">More...</a><br /></td></tr>
+<tr class="separator:ga580e7e31771c62f4c75357226fb0f2d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5dd0deff94bb7c09eb20e778ec62ec5c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga5dd0deff94bb7c09eb20e778ec62ec5c">aos_rtc_get_calendar_time</a> (uint16_t *milliseconds)</td></tr>
 <tr class="memdesc:ga5dd0deff94bb7c09eb20e778ec62ec5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the system time with the number of seconds elapsed since epoch.  <a href="group__rtc__facility.html#ga5dd0deff94bb7c09eb20e778ec62ec5c">More...</a><br /></td></tr>
 <tr class="separator:ga5dd0deff94bb7c09eb20e778ec62ec5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8d3f1b2c522dec003b65b9f10e96fe3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga8d3f1b2c522dec003b65b9f10e96fe3b">aos_rtc_get_current_time_ms</a> (void)</td></tr>
-<tr class="memdesc:ga8d3f1b2c522dec003b65b9f10e96fe3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current time in ms.  <a href="group__rtc__facility.html#ga8d3f1b2c522dec003b65b9f10e96fe3b">More...</a><br /></td></tr>
-<tr class="separator:ga8d3f1b2c522dec003b65b9f10e96fe3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6fdecd3373094cd775f3c33d5485300b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga6fdecd3373094cd775f3c33d5485300b">aos_rtc_get_current_time_sec</a> (void)</td></tr>
-<tr class="memdesc:ga6fdecd3373094cd775f3c33d5485300b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current time in seconds.  <a href="group__rtc__facility.html#ga6fdecd3373094cd775f3c33d5485300b">More...</a><br /></td></tr>
-<tr class="separator:ga6fdecd3373094cd775f3c33d5485300b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2cf46011db91959a7f30b29c157f0848"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga2cf46011db91959a7f30b29c157f0848">aos_rtc_get_current_time_ticks</a> (void)</td></tr>
-<tr class="memdesc:ga2cf46011db91959a7f30b29c157f0848"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the RTC time value in ticks.  <a href="group__rtc__facility.html#ga2cf46011db91959a7f30b29c157f0848">More...</a><br /></td></tr>
-<tr class="separator:ga2cf46011db91959a7f30b29c157f0848"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5cd7d983fbcd3f8915fc53a110874597"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga5cd7d983fbcd3f8915fc53a110874597">aos_rtc_get_current_time_100us</a> (void)</td></tr>
-<tr class="memdesc:ga5cd7d983fbcd3f8915fc53a110874597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the RTC value in step of 100us.  <a href="group__rtc__facility.html#ga5cd7d983fbcd3f8915fc53a110874597">More...</a><br /></td></tr>
-<tr class="separator:ga5cd7d983fbcd3f8915fc53a110874597"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3346135c386643df686d747dec3c416e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga3346135c386643df686d747dec3c416e">aos_rtc_get_alarm_a_elapsed_time</a> (void)</td></tr>
-<tr class="memdesc:ga3346135c386643df686d747dec3c416e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the RTC alarm A elapsed time since the last Alarm was set.  <a href="group__rtc__facility.html#ga3346135c386643df686d747dec3c416e">More...</a><br /></td></tr>
-<tr class="separator:ga3346135c386643df686d747dec3c416e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd409b8e83c34099bd8635c5724044a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#gadd409b8e83c34099bd8635c5724044a2">aos_rtc_get_current_time_ms</a> (void)</td></tr>
+<tr class="memdesc:gadd409b8e83c34099bd8635c5724044a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current time in ms.  <a href="group__rtc__facility.html#gadd409b8e83c34099bd8635c5724044a2">More...</a><br /></td></tr>
+<tr class="separator:gadd409b8e83c34099bd8635c5724044a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0fd612f384a4528db97abd740634d47a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga0fd612f384a4528db97abd740634d47a">aos_rtc_get_current_time_sec</a> (void)</td></tr>
+<tr class="memdesc:ga0fd612f384a4528db97abd740634d47a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current time in seconds.  <a href="group__rtc__facility.html#ga0fd612f384a4528db97abd740634d47a">More...</a><br /></td></tr>
+<tr class="separator:ga0fd612f384a4528db97abd740634d47a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadcff655eb958a96651b508a037be09fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#gadcff655eb958a96651b508a037be09fb">aos_rtc_get_current_time_ticks</a> (void)</td></tr>
+<tr class="memdesc:gadcff655eb958a96651b508a037be09fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the RTC time value in ticks.  <a href="group__rtc__facility.html#gadcff655eb958a96651b508a037be09fb">More...</a><br /></td></tr>
+<tr class="separator:gadcff655eb958a96651b508a037be09fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab38c7b308d9d1a261db161c76b847ac7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#gab38c7b308d9d1a261db161c76b847ac7">aos_rtc_get_current_time_100us</a> (void)</td></tr>
+<tr class="memdesc:gab38c7b308d9d1a261db161c76b847ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the RTC value in step of 100us.  <a href="group__rtc__facility.html#gab38c7b308d9d1a261db161c76b847ac7">More...</a><br /></td></tr>
+<tr class="separator:gab38c7b308d9d1a261db161c76b847ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10e332565fb43be708a9c383d863a9ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga10e332565fb43be708a9c383d863a9ee">aos_rtc_get_alarm_a_elapsed_time</a> (void)</td></tr>
+<tr class="memdesc:ga10e332565fb43be708a9c383d863a9ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the RTC alarm A elapsed time since the last Alarm was set.  <a href="group__rtc__facility.html#ga10e332565fb43be708a9c383d863a9ee">More...</a><br /></td></tr>
+<tr class="separator:ga10e332565fb43be708a9c383d863a9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1d940d316fc705b19b470b2b492c56be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga1d940d316fc705b19b470b2b492c56be">aos_rtc_backup_write</a> (<a class="el" href="group__rtc__facility.html#ga5fb80f4cb5c499733a842b62d0f4f190">aos_rtc_backup_register_t</a> reg, uint32_t data)</td></tr>
 <tr class="memdesc:ga1d940d316fc705b19b470b2b492c56be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a data to a the RTC backup register.  <a href="group__rtc__facility.html#ga1d940d316fc705b19b470b2b492c56be">More...</a><br /></td></tr>
 <tr class="separator:ga1d940d316fc705b19b470b2b492c56be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab9972aec9c462d583dd8319599a4fe2b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#gab9972aec9c462d583dd8319599a4fe2b">aos_rtc_backup_read</a> (<a class="el" href="group__rtc__facility.html#ga5fb80f4cb5c499733a842b62d0f4f190">aos_rtc_backup_register_t</a> reg)</td></tr>
 <tr class="memdesc:gab9972aec9c462d583dd8319599a4fe2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a data from the RTC backup register.  <a href="group__rtc__facility.html#gab9972aec9c462d583dd8319599a4fe2b">More...</a><br /></td></tr>
 <tr class="separator:gab9972aec9c462d583dd8319599a4fe2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3272b4ea0f86476d1aef8347231449d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga3272b4ea0f86476d1aef8347231449d4">aos_rtc_temp_compensation</a> (<a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a> period, float temperature)</td></tr>
-<tr class="memdesc:ga3272b4ea0f86476d1aef8347231449d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the temperature compensation for a period of time on a specific temperature.  <a href="group__rtc__facility.html#ga3272b4ea0f86476d1aef8347231449d4">More...</a><br /></td></tr>
-<tr class="separator:ga3272b4ea0f86476d1aef8347231449d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed7ddd645e3e2a81b10fc1c4e2979043"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#gaed7ddd645e3e2a81b10fc1c4e2979043">aos_rtc_temp_compensation</a> (<a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a> period, float temperature)</td></tr>
+<tr class="memdesc:gaed7ddd645e3e2a81b10fc1c4e2979043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the temperature compensation for a period of time on a specific temperature.  <a href="group__rtc__facility.html#gaed7ddd645e3e2a81b10fc1c4e2979043">More...</a><br /></td></tr>
+<tr class="separator:gaed7ddd645e3e2a81b10fc1c4e2979043"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4cae7a8c842df5c5dad403f2ef70b766"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaos__rtc__systime__t.html">aos_rtc_systime_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga4cae7a8c842df5c5dad403f2ef70b766">aos_rtc_systime_add</a> (<a class="el" href="structaos__rtc__systime__t.html">aos_rtc_systime_t</a> a, <a class="el" href="structaos__rtc__systime__t.html">aos_rtc_systime_t</a> b)</td></tr>
 <tr class="memdesc:ga4cae7a8c842df5c5dad403f2ef70b766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add two system time.  <a href="group__rtc__facility.html#ga4cae7a8c842df5c5dad403f2ef70b766">More...</a><br /></td></tr>
 <tr class="separator:ga4cae7a8c842df5c5dad403f2ef70b766"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -289,12 +297,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gaedd7fba44b0b99996d35a41a892c30e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaos__rtc__systime__t.html">aos_rtc_systime_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#gaedd7fba44b0b99996d35a41a892c30e6">aos_rtc_systime_get_mcu_time</a> (void)</td></tr>
 <tr class="memdesc:gaedd7fba44b0b99996d35a41a892c30e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the MCU time (the uptime)  <a href="group__rtc__facility.html#gaedd7fba44b0b99996d35a41a892c30e6">More...</a><br /></td></tr>
 <tr class="separator:gaedd7fba44b0b99996d35a41a892c30e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafb0361d526cda482dd3755fb2e0b13ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#gafb0361d526cda482dd3755fb2e0b13ae">aos_rtc_systime_to_ms</a> (<a class="el" href="structaos__rtc__systime__t.html">aos_rtc_systime_t</a> systime)</td></tr>
-<tr class="memdesc:gafb0361d526cda482dd3755fb2e0b13ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the input time in systime format to milliseconds.  <a href="group__rtc__facility.html#gafb0361d526cda482dd3755fb2e0b13ae">More...</a><br /></td></tr>
-<tr class="separator:gafb0361d526cda482dd3755fb2e0b13ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf88d63a37bb60b84e994a764c59223aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaos__rtc__systime__t.html">aos_rtc_systime_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#gaf88d63a37bb60b84e994a764c59223aa">aos_rtc_systime_from_ms</a> (<a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a> time_ms)</td></tr>
-<tr class="memdesc:gaf88d63a37bb60b84e994a764c59223aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the input time in milliseconds to the system time format.  <a href="group__rtc__facility.html#gaf88d63a37bb60b84e994a764c59223aa">More...</a><br /></td></tr>
-<tr class="separator:gaf88d63a37bb60b84e994a764c59223aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab8b12a784eee4964cabb5bcb5c4b0ccb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#gab8b12a784eee4964cabb5bcb5c4b0ccb">aos_rtc_systime_to_ms</a> (<a class="el" href="structaos__rtc__systime__t.html">aos_rtc_systime_t</a> systime)</td></tr>
+<tr class="memdesc:gab8b12a784eee4964cabb5bcb5c4b0ccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the input time in systime format to milliseconds.  <a href="group__rtc__facility.html#gab8b12a784eee4964cabb5bcb5c4b0ccb">More...</a><br /></td></tr>
+<tr class="separator:gab8b12a784eee4964cabb5bcb5c4b0ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe57122575450a1f67565ffb7da3532d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaos__rtc__systime__t.html">aos_rtc_systime_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#gabe57122575450a1f67565ffb7da3532d">aos_rtc_systime_from_ms</a> (<a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a> time_ms)</td></tr>
+<tr class="memdesc:gabe57122575450a1f67565ffb7da3532d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the input time in milliseconds to the system time format.  <a href="group__rtc__facility.html#gabe57122575450a1f67565ffb7da3532d">More...</a><br /></td></tr>
+<tr class="separator:gabe57122575450a1f67565ffb7da3532d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga068ac008e997e2342f11ae55eb519ca5"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc__facility.html#ga068ac008e997e2342f11ae55eb519ca5">aos_rtc_systime_mk_time</a> (const struct tm *localtime)</td></tr>
 <tr class="memdesc:ga068ac008e997e2342f11ae55eb519ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the usual UNIX time structure to the number of seconds.  <a href="group__rtc__facility.html#ga068ac008e997e2342f11ae55eb519ca5">More...</a><br /></td></tr>
 <tr class="separator:ga068ac008e997e2342f11ae55eb519ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -526,8 +534,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gae0a772c03e406c2d2e979bb43e929c2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae0a772c03e406c2d2e979bb43e929c2d">&#9670;&nbsp;</a></span>aos_rtc_delay_ms()</h2>
+<a id="ga731911eb28b61ee69845f216948f1b71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga731911eb28b61ee69845f216948f1b71">&#9670;&nbsp;</a></span>aos_rtc_delay_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -535,7 +543,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void aos_rtc_delay_ms </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a>&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>milliseconds</em></td><td>)</td>
           <td></td>
         </tr>
@@ -552,14 +560,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga439a15f6a70ddca1f238027c535b9a75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga439a15f6a70ddca1f238027c535b9a75">&#9670;&nbsp;</a></span>aos_rtc_get_alarm_a_context()</h2>
+<a id="ga580e7e31771c62f4c75357226fb0f2d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga580e7e31771c62f4c75357226fb0f2d5">&#9670;&nbsp;</a></span>aos_rtc_get_alarm_a_context()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t aos_rtc_get_alarm_a_context </td>
+          <td class="memname"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a> aos_rtc_get_alarm_a_context </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -577,14 +585,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga3346135c386643df686d747dec3c416e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3346135c386643df686d747dec3c416e">&#9670;&nbsp;</a></span>aos_rtc_get_alarm_a_elapsed_time()</h2>
+<a id="ga10e332565fb43be708a9c383d863a9ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga10e332565fb43be708a9c383d863a9ee">&#9670;&nbsp;</a></span>aos_rtc_get_alarm_a_elapsed_time()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t aos_rtc_get_alarm_a_elapsed_time </td>
+          <td class="memname"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a> aos_rtc_get_alarm_a_elapsed_time </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -635,14 +643,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga5cd7d983fbcd3f8915fc53a110874597"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5cd7d983fbcd3f8915fc53a110874597">&#9670;&nbsp;</a></span>aos_rtc_get_current_time_100us()</h2>
+<a id="gab38c7b308d9d1a261db161c76b847ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab38c7b308d9d1a261db161c76b847ac7">&#9670;&nbsp;</a></span>aos_rtc_get_current_time_100us()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t aos_rtc_get_current_time_100us </td>
+          <td class="memname"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a> aos_rtc_get_current_time_100us </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -661,14 +669,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga8d3f1b2c522dec003b65b9f10e96fe3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8d3f1b2c522dec003b65b9f10e96fe3b">&#9670;&nbsp;</a></span>aos_rtc_get_current_time_ms()</h2>
+<a id="gadd409b8e83c34099bd8635c5724044a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadd409b8e83c34099bd8635c5724044a2">&#9670;&nbsp;</a></span>aos_rtc_get_current_time_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a> aos_rtc_get_current_time_ms </td>
+          <td class="memname"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a> aos_rtc_get_current_time_ms </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -687,14 +695,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga6fdecd3373094cd775f3c33d5485300b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6fdecd3373094cd775f3c33d5485300b">&#9670;&nbsp;</a></span>aos_rtc_get_current_time_sec()</h2>
+<a id="ga0fd612f384a4528db97abd740634d47a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0fd612f384a4528db97abd740634d47a">&#9670;&nbsp;</a></span>aos_rtc_get_current_time_sec()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a> aos_rtc_get_current_time_sec </td>
+          <td class="memname"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a> aos_rtc_get_current_time_sec </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -713,14 +721,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga2cf46011db91959a7f30b29c157f0848"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2cf46011db91959a7f30b29c157f0848">&#9670;&nbsp;</a></span>aos_rtc_get_current_time_ticks()</h2>
+<a id="gadcff655eb958a96651b508a037be09fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadcff655eb958a96651b508a037be09fb">&#9670;&nbsp;</a></span>aos_rtc_get_current_time_ticks()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t aos_rtc_get_current_time_ticks </td>
+          <td class="memname"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a> aos_rtc_get_current_time_ticks </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -786,16 +794,16 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga7c96e923d2e8d0c1db4fe40bb5b77c8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7c96e923d2e8d0c1db4fe40bb5b77c8e">&#9670;&nbsp;</a></span>aos_rtc_ms_to_tick()</h2>
+<a id="ga4522f69ab51a18174470845dce00a84d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4522f69ab51a18174470845dce00a84d">&#9670;&nbsp;</a></span>aos_rtc_ms_to_tick()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t aos_rtc_ms_to_tick </td>
+          <td class="memname"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a> aos_rtc_ms_to_tick </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a>&#160;</td>
           <td class="paramname"><em>milliseconds</em></td><td>)</td>
           <td></td>
         </tr>
@@ -856,14 +864,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gaaa84843c677e79586efeb61d8336566e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaaa84843c677e79586efeb61d8336566e">&#9670;&nbsp;</a></span>aos_rtc_set_alarm_a_context()</h2>
+<a id="ga591e9b5bba8b327f22a982b0d0ab0877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga591e9b5bba8b327f22a982b0d0ab0877">&#9670;&nbsp;</a></span>aos_rtc_set_alarm_a_context()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t aos_rtc_set_alarm_a_context </td>
+          <td class="memname"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a> aos_rtc_set_alarm_a_context </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1026,8 +1034,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gaf88d63a37bb60b84e994a764c59223aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf88d63a37bb60b84e994a764c59223aa">&#9670;&nbsp;</a></span>aos_rtc_systime_from_ms()</h2>
+<a id="gabe57122575450a1f67565ffb7da3532d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabe57122575450a1f67565ffb7da3532d">&#9670;&nbsp;</a></span>aos_rtc_systime_from_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1035,7 +1043,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structaos__rtc__systime__t.html">aos_rtc_systime_t</a> aos_rtc_systime_from_ms </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a>&#160;</td>
           <td class="paramname"><em>time_ms</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1257,14 +1265,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gafb0361d526cda482dd3755fb2e0b13ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafb0361d526cda482dd3755fb2e0b13ae">&#9670;&nbsp;</a></span>aos_rtc_systime_to_ms()</h2>
+<a id="gab8b12a784eee4964cabb5bcb5c4b0ccb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab8b12a784eee4964cabb5bcb5c4b0ccb">&#9670;&nbsp;</a></span>aos_rtc_systime_to_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a> aos_rtc_systime_to_ms </td>
+          <td class="memname"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a> aos_rtc_systime_to_ms </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structaos__rtc__systime__t.html">aos_rtc_systime_t</a>&#160;</td>
           <td class="paramname"><em>systime</em></td><td>)</td>
@@ -1289,16 +1297,16 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga3272b4ea0f86476d1aef8347231449d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3272b4ea0f86476d1aef8347231449d4">&#9670;&nbsp;</a></span>aos_rtc_temp_compensation()</h2>
+<a id="gaed7ddd645e3e2a81b10fc1c4e2979043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaed7ddd645e3e2a81b10fc1c4e2979043">&#9670;&nbsp;</a></span>aos_rtc_temp_compensation()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a> aos_rtc_temp_compensation </td>
+          <td class="memname"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a> aos_rtc_temp_compensation </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a>&#160;</td>
           <td class="paramname"><em>period</em>, </td>
         </tr>
         <tr>
@@ -1332,16 +1340,16 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga69691ba033a2a60622cf50aa63e4c389"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga69691ba033a2a60622cf50aa63e4c389">&#9670;&nbsp;</a></span>aos_rtc_tick_to_ms()</h2>
+<a id="gaa016b33f852a0304e1ad8da9a711d165"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa016b33f852a0304e1ad8da9a711d165">&#9670;&nbsp;</a></span>aos_rtc_tick_to_ms()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__sys__timer.html#ga5cbd14ba4895d5f94c82aa550210e9f6">aos_timer_time_t</a> aos_rtc_tick_to_ms </td>
+          <td class="memname"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a> aos_rtc_tick_to_ms </td>
           <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramtype"><a class="el" href="group__rtc__facility.html#ga8e6f25b54f8792b909a32399fd827588">aos_rtc_time_t</a>&#160;</td>
           <td class="paramname"><em>tick</em></td><td>)</td>
           <td></td>
         </tr>

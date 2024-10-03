@@ -69,7 +69,6 @@ $(function() {
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">aos_ble_core.h File Reference</div>  </div>
@@ -78,25 +77,58 @@ $(function() {
 
 <p>BLE core related API (connectivity, advertisement, scan ...)  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;hci_tl.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;ble.h&quot;</code><br />
+<code>#include &quot;tl.h&quot;</code><br />
+<code>#include &quot;core_cm4.h&quot;</code><br />
+<code>#include &quot;FreeRTOS.h&quot;</code><br />
+<code>#include &quot;semphr.h&quot;</code><br />
+<code>#include &quot;hci_tl.h&quot;</code><br />
 <code>#include &quot;ble_types.h&quot;</code><br />
 <code>#include &quot;stdbool.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="aos__common_8h_source.html">aos_common.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="aos__ble__common_8h_source.html">aos_ble_common.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="aos__lpm_8h_source.html">aos_lpm.h</a>&quot;</code><br />
+<code>#include &quot;task.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for aos_ble_core.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="aos__ble__core_8h__incl.png" border="0" usemap="#aos-core_2aos__ble_2aos__ble__core_8h" alt=""/></div>
 <map name="aos-core_2aos__ble_2aos__ble__core_8h" id="aos-core_2aos__ble_2aos__ble__core_8h">
-<area shape="rect" title="BLE core related API (connectivity, advertisement, scan ...)" alt="" coords="200,5,347,47"/>
-<area shape="rect" title=" " alt="" coords="5,95,69,121"/>
-<area shape="rect" title=" " alt="" coords="94,95,183,121"/>
-<area shape="rect" title=" " alt="" coords="399,169,473,196"/>
-<area shape="rect" href="aos__common_8h.html" title="Common definitions." alt="" coords="263,169,374,196"/>
-<area shape="rect" href="aos__ble__common_8h.html" title="common types and const for BLE module" alt="" coords="259,95,394,121"/>
-<area shape="rect" href="aos__lpm_8h.html" title="Low power management facility." alt="" coords="469,95,552,121"/>
-<area shape="rect" title=" " alt="" coords="382,244,447,271"/>
+<area shape="rect" title="BLE core related API (connectivity, advertisement, scan ...)" alt="" coords="436,5,583,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,56,121"/>
+<area shape="rect" title=" " alt="" coords="80,95,120,121"/>
+<area shape="rect" title=" " alt="" coords="144,95,235,121"/>
+<area shape="rect" title=" " alt="" coords="259,95,355,121"/>
+<area shape="rect" title=" " alt="" coords="379,95,453,121"/>
+<area shape="rect" title=" " alt="" coords="477,95,541,121"/>
+<area shape="rect" title=" " alt="" coords="566,95,655,121"/>
+<area shape="rect" title=" " alt="" coords="927,393,1001,420"/>
+<area shape="rect" href="aos__common_8h.html" title="Common definitions." alt="" coords="731,169,842,196"/>
+<area shape="rect" href="aos__ble__common_8h.html" title="common types and const for BLE module" alt="" coords="1719,95,1854,121"/>
+<area shape="rect" title=" " alt="" coords="1879,95,1937,121"/>
+<area shape="rect" title=" " alt="" coords="754,244,819,271"/>
+<area shape="rect" href="aos__ble__conf_8h.html" title="Configuration file for BLE Middleware." alt="" coords="866,169,977,196"/>
+<area shape="rect" title=" " alt="" coords="1001,169,1135,196"/>
+<area shape="rect" title=" " alt="" coords="1159,169,1259,196"/>
+<area shape="rect" title=" " alt="" coords="1283,169,1424,196"/>
+<area shape="rect" title=" " alt="" coords="1448,169,1611,196"/>
+<area shape="rect" title=" " alt="" coords="1635,169,1773,196"/>
+<area shape="rect" title=" " alt="" coords="1797,169,1941,196"/>
+<area shape="rect" title=" " alt="" coords="1965,169,2107,196"/>
+<area shape="rect" title=" " alt="" coords="2131,169,2271,196"/>
+<area shape="rect" title=" " alt="" coords="2295,169,2451,196"/>
+<area shape="rect" title=" " alt="" coords="2476,169,2620,196"/>
+<area shape="rect" title=" " alt="" coords="2644,169,2796,196"/>
+<area shape="rect" title=" " alt="" coords="2820,169,2964,196"/>
+<area shape="rect" title=" " alt="" coords="2989,169,3123,196"/>
+<area shape="rect" title=" " alt="" coords="3148,169,3231,196"/>
+<area shape="rect" href="app__conf_8h.html" title="Application configuration file for STM32WPAN Middleware." alt="" coords="898,244,985,271"/>
+<area shape="rect" title=" " alt="" coords="731,319,779,345"/>
+<area shape="rect" title=" " alt="" coords="803,319,885,345"/>
+<area shape="rect" title=" " alt="" coords="909,319,973,345"/>
+<area shape="rect" title=" " alt="" coords="997,319,1096,345"/>
+<area shape="rect" href="aos__thread__priority_8h_source.html" title=" " alt="" coords="1120,319,1261,345"/>
+<area shape="rect" href="aos__log_8h.html" title="log facility" alt="" coords="1286,319,1365,345"/>
+<area shape="rect" title=" " alt="" coords="1295,393,1356,420"/>
 </map>
 </div>
 </div>
@@ -112,14 +144,6 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga391b9f32d78aef608c1419b3d5c692cd">AOS_BLE_CORE_TX_POWER_LEVEL_MAX</a>&#160;&#160;&#160;31</td></tr>
 <tr class="memdesc:ga391b9f32d78aef608c1419b3d5c692cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max index of tx power level. <br /></td></tr>
 <tr class="separator:ga391b9f32d78aef608c1419b3d5c692cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa668eda7be63b9bd08f4cb9398ecbe03"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#gaa668eda7be63b9bd08f4cb9398ecbe03">RESTART_ADV</a>&#160;&#160;&#160;true</td></tr>
-<tr class="memdesc:gaa668eda7be63b9bd08f4cb9398ecbe03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to restart the BLE advertisement. <br /></td></tr>
-<tr class="separator:gaa668eda7be63b9bd08f4cb9398ecbe03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafafb4a464740b4ebbc7b1779e2d9c783"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#gafafb4a464740b4ebbc7b1779e2d9c783">STOP_ADV</a>&#160;&#160;&#160;false</td></tr>
-<tr class="memdesc:gafafb4a464740b4ebbc7b1779e2d9c783"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to stop the BLE advertisement. <br /></td></tr>
-<tr class="separator:gafafb4a464740b4ebbc7b1779e2d9c783"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga996f7be338ccb40d1a2a5abc1ad61759"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga996f7be338ccb40d1a2a5abc1ad61759">ABS</a>(x)&#160;&#160;&#160;((x)&gt;0? (x):-(x))</td></tr>
 <tr class="memdesc:ga996f7be338ccb40d1a2a5abc1ad61759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to get the absolute value of the input parameter. <br /></td></tr>
@@ -127,104 +151,45 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga638bd14607f62c4273c89f0bccd5f419"><td class="memItemLeft" align="right" valign="top">typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga638bd14607f62c4273c89f0bccd5f419">aos_ble_core_beaconing_callback_t</a>(uint8_t pow_level)</td></tr>
-<tr class="memdesc:ga638bd14607f62c4273c89f0bccd5f419"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE beaconing callback to call when the tx power level is changed.  <a href="group__aos__ble__core.html#ga638bd14607f62c4273c89f0bccd5f419">More...</a><br /></td></tr>
-<tr class="separator:ga638bd14607f62c4273c89f0bccd5f419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga914ca2bcdef0ff0518b4f7643026af8e"><td class="memItemLeft" align="right" valign="top">typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga914ca2bcdef0ff0518b4f7643026af8e">aos_ble_core_scan_callback_t</a>(const Advertising_Report_t *par)</td></tr>
-<tr class="memdesc:ga914ca2bcdef0ff0518b4f7643026af8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE scan call back to call when a scan is done.  <a href="group__aos__ble__core.html#ga914ca2bcdef0ff0518b4f7643026af8e">More...</a><br /></td></tr>
-<tr class="separator:ga914ca2bcdef0ff0518b4f7643026af8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4c88e7ed95d8b4f42bfa8934278fbe4b"><td class="memItemLeft" align="right" valign="top">typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga4c88e7ed95d8b4f42bfa8934278fbe4b">aos_ble_core_connectivity_callback_t</a>(<a class="el" href="group__aos__ble__core.html#ga3caf4a97361e5f3470ce599637f60dd1">aos_ble_core_conn_status_t</a> state)</td></tr>
-<tr class="memdesc:ga4c88e7ed95d8b4f42bfa8934278fbe4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE connectivity call back to call when a the connectivity state change.  <a href="group__aos__ble__core.html#ga4c88e7ed95d8b4f42bfa8934278fbe4b">More...</a><br /></td></tr>
-<tr class="separator:ga4c88e7ed95d8b4f42bfa8934278fbe4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5d0050192edcf409ee8069e107ecb558"><td class="memItemLeft" align="right" valign="top">typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga5d0050192edcf409ee8069e107ecb558">aos_ble_core_app_ble_callback_t</a>(<a class="el" href="group__aos__ble__core.html#ga3caf4a97361e5f3470ce599637f60dd1">aos_ble_core_conn_status_t</a> state)</td></tr>
-<tr class="memdesc:ga5d0050192edcf409ee8069e107ecb558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applicative BLE call back to call when a the connectivity state change.  <a href="group__aos__ble__core.html#ga5d0050192edcf409ee8069e107ecb558">More...</a><br /></td></tr>
-<tr class="separator:ga5d0050192edcf409ee8069e107ecb558"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:ga3caf4a97361e5f3470ce599637f60dd1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga3caf4a97361e5f3470ce599637f60dd1">aos_ble_core_conn_status_t</a> { <br />
-&#160;&#160;<a class="el" href="group__aos__ble__core.html#gga3caf4a97361e5f3470ce599637f60dd1ae0b77c319bf2d9ef2bba65173c59aceb">aos_ble_core_idle</a>, 
-<a class="el" href="group__aos__ble__core.html#gga3caf4a97361e5f3470ce599637f60dd1ad6d6dcf978d221831947b255ed838295">aos_ble_core_fast_adv</a>, 
-<a class="el" href="group__aos__ble__core.html#gga3caf4a97361e5f3470ce599637f60dd1a9ed185bcd4c7f18a59f27197b451e6c8">aos_ble_core_lp_adv</a>, 
-<a class="el" href="group__aos__ble__core.html#gga3caf4a97361e5f3470ce599637f60dd1aaf5eac701997c3cba2d3dff2fe7cb719">aos_ble_core_scan</a>, 
-<br />
-&#160;&#160;<a class="el" href="group__aos__ble__core.html#gga3caf4a97361e5f3470ce599637f60dd1a1c1a6da3290a106c4206280f4cb2ad84">aos_ble_core_lp_connecting</a>, 
-<a class="el" href="group__aos__ble__core.html#gga3caf4a97361e5f3470ce599637f60dd1a53d14a16558e04cfef538fd2e9eb2a09">aos_ble_core_connected_server</a>, 
-<a class="el" href="group__aos__ble__core.html#gga3caf4a97361e5f3470ce599637f60dd1a5b8bbe8df8043442592ee31b13e18669">aos_ble_core_connected_client</a>, 
-<a class="el" href="group__aos__ble__core.html#gga3caf4a97361e5f3470ce599637f60dd1a46e88830d3412d3dfce2d58a8685d521">aos_ble_core_connected_bonded</a>
-<br />
- }</td></tr>
-<tr class="memdesc:ga3caf4a97361e5f3470ce599637f60dd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE connection state.  <a href="group__aos__ble__core.html#ga3caf4a97361e5f3470ce599637f60dd1">More...</a><br /></td></tr>
-<tr class="separator:ga3caf4a97361e5f3470ce599637f60dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga798bb4073860a69e53b580cf8ea1dd04"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga798bb4073860a69e53b580cf8ea1dd04">aos_ble_core_conn_interval_t</a> { <a class="el" href="group__aos__ble__core.html#gga798bb4073860a69e53b580cf8ea1dd04a90f895eba14145788aa8c514fdc5ee9a">aos_ble_core_conn_interval_fast</a> = 0, 
-<a class="el" href="group__aos__ble__core.html#gga798bb4073860a69e53b580cf8ea1dd04a515d233724265277da6535512a70cc91">aos_ble_core_conn_interval_slow</a> = 1, 
-<a class="el" href="group__aos__ble__core.html#gga798bb4073860a69e53b580cf8ea1dd04a8f07d45317d0dc47c618d25a0224820f">aos_ble_core_conn_interval_very_fast</a> = 2
- }</td></tr>
-<tr class="memdesc:ga798bb4073860a69e53b580cf8ea1dd04"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE connection state.  <a href="group__aos__ble__core.html#ga798bb4073860a69e53b580cf8ea1dd04">More...</a><br /></td></tr>
-<tr class="separator:ga798bb4073860a69e53b580cf8ea1dd04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabb9e99d9aac7614e4e90689340396bf8"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#gabb9e99d9aac7614e4e90689340396bf8">aos_ble_core_notif_callback_t</a>) (void *pckt)</td></tr>
+<tr class="memdesc:gabb9e99d9aac7614e4e90689340396bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE notification callback type, used to dispatch BLE notifications.  <a href="group__aos__ble__core.html#gabb9e99d9aac7614e4e90689340396bf8">More...</a><br /></td></tr>
+<tr class="separator:gabb9e99d9aac7614e4e90689340396bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga70fb42095e5ce749652c65c28f586645"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga70fb42095e5ce749652c65c28f586645">aos_ble_core_app_init</a> (<a class="el" href="structaos__ble__app__data__t.html">aos_ble_app_data_t</a> *app_info)</td></tr>
-<tr class="memdesc:ga70fb42095e5ce749652c65c28f586645"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE Initialization API.  <a href="group__aos__ble__core.html#ga70fb42095e5ce749652c65c28f586645">More...</a><br /></td></tr>
-<tr class="separator:ga70fb42095e5ce749652c65c28f586645"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga15d319b1811fdf3d2e29729a20f3e125"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__aos__ble__core.html#ga3caf4a97361e5f3470ce599637f60dd1">aos_ble_core_conn_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga15d319b1811fdf3d2e29729a20f3e125">aos_ble_core_get_connection_status</a> (void)</td></tr>
-<tr class="memdesc:ga15d319b1811fdf3d2e29729a20f3e125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get BLE connection status.  <a href="group__aos__ble__core.html#ga15d319b1811fdf3d2e29729a20f3e125">More...</a><br /></td></tr>
-<tr class="separator:ga15d319b1811fdf3d2e29729a20f3e125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c39ca0160f0a38427f82f90f7941b41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga6c39ca0160f0a38427f82f90f7941b41">aos_ble_core_app_init</a> (uint8_t ble_role)</td></tr>
+<tr class="memdesc:ga6c39ca0160f0a38427f82f90f7941b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE Initialization API.  <a href="group__aos__ble__core.html#ga6c39ca0160f0a38427f82f90f7941b41">More...</a><br /></td></tr>
+<tr class="separator:ga6c39ca0160f0a38427f82f90f7941b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga558c4848aabd0b02eaa28e9840767103"><td class="memItemLeft" align="right" valign="top">const uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga558c4848aabd0b02eaa28e9840767103">aos_ble_core_get_bd_address</a> (void)</td></tr>
 <tr class="memdesc:ga558c4848aabd0b02eaa28e9840767103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get BLE Device address.  <a href="group__aos__ble__core.html#ga558c4848aabd0b02eaa28e9840767103">More...</a><br /></td></tr>
 <tr class="separator:ga558c4848aabd0b02eaa28e9840767103"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac33873c6e7167aa76c870a5f8ee9fde8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#gac33873c6e7167aa76c870a5f8ee9fde8">aos_ble_core_advertise</a> (<a class="el" href="group__aos__ble__core.html#ga3caf4a97361e5f3470ce599637f60dd1">aos_ble_core_conn_status_t</a> new_status)</td></tr>
-<tr class="memdesc:gac33873c6e7167aa76c870a5f8ee9fde8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start connectivity advertisement.  <a href="group__aos__ble__core.html#gac33873c6e7167aa76c870a5f8ee9fde8">More...</a><br /></td></tr>
-<tr class="separator:gac33873c6e7167aa76c870a5f8ee9fde8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga33516ed9a282b6dff170dff2a9d45ae6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga33516ed9a282b6dff170dff2a9d45ae6">aos_ble_core_set_scan_callback</a> (<a class="el" href="group__aos__ble__core.html#ga914ca2bcdef0ff0518b4f7643026af8e">aos_ble_core_scan_callback_t</a> *cb)</td></tr>
-<tr class="memdesc:ga33516ed9a282b6dff170dff2a9d45ae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the scan callback function, when HCI_LE_ADVERTISING_REPORT_SUBEVT_CODE event occur call this callback to process data.  <a href="group__aos__ble__core.html#ga33516ed9a282b6dff170dff2a9d45ae6">More...</a><br /></td></tr>
-<tr class="separator:ga33516ed9a282b6dff170dff2a9d45ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga98f2817d5725d583cc9e484b056a6d1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga98f2817d5725d583cc9e484b056a6d1b">aos_ble_core_set_beaconing_callback</a> (<a class="el" href="group__aos__ble__core.html#ga638bd14607f62c4273c89f0bccd5f419">aos_ble_core_beaconing_callback_t</a> *cb)</td></tr>
-<tr class="memdesc:ga98f2817d5725d583cc9e484b056a6d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the beaconing callback function, when the tx power level is changed this callback is called.  <a href="group__aos__ble__core.html#ga98f2817d5725d583cc9e484b056a6d1b">More...</a><br /></td></tr>
-<tr class="separator:ga98f2817d5725d583cc9e484b056a6d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga86e37c1a0c895c69c0ff2d94c601d547"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga86e37c1a0c895c69c0ff2d94c601d547">aos_ble_core_set_connectivity_callback</a> (<a class="el" href="group__aos__ble__core.html#ga4c88e7ed95d8b4f42bfa8934278fbe4b">aos_ble_core_connectivity_callback_t</a> cb)</td></tr>
-<tr class="memdesc:ga86e37c1a0c895c69c0ff2d94c601d547"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the connectivity callback function, the callback is called when the connectivity status change.  <a href="group__aos__ble__core.html#ga86e37c1a0c895c69c0ff2d94c601d547">More...</a><br /></td></tr>
-<tr class="separator:ga86e37c1a0c895c69c0ff2d94c601d547"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2ab0de264e0b24bbfc4ee12a0879f305"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga2ab0de264e0b24bbfc4ee12a0879f305">aos_ble_core_set_app_ble_callback</a> (<a class="el" href="group__aos__ble__core.html#ga5d0050192edcf409ee8069e107ecb558">aos_ble_core_app_ble_callback_t</a> cb)</td></tr>
-<tr class="memdesc:ga2ab0de264e0b24bbfc4ee12a0879f305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the applicative BLE callback function, the callback is called when the connectivity status change.  <a href="group__aos__ble__core.html#ga2ab0de264e0b24bbfc4ee12a0879f305">More...</a><br /></td></tr>
-<tr class="separator:ga2ab0de264e0b24bbfc4ee12a0879f305"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga16284132bcba512b97d1db5a37d130d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga16284132bcba512b97d1db5a37d130d7">aos_ble_core_set_tx_power_level</a> (uint8_t tx_power_level)</td></tr>
 <tr class="memdesc:ga16284132bcba512b97d1db5a37d130d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set TX POWER LEVEL,.  <a href="group__aos__ble__core.html#ga16284132bcba512b97d1db5a37d130d7">More...</a><br /></td></tr>
 <tr class="separator:ga16284132bcba512b97d1db5a37d130d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4db7b2431174ceaaa4fe4ed8f2e07bb8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga4db7b2431174ceaaa4fe4ed8f2e07bb8">aos_ble_core_get_tx_power_level</a> (void)</td></tr>
-<tr class="memdesc:ga4db7b2431174ceaaa4fe4ed8f2e07bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get TX POWER LEVEL,.  <a href="group__aos__ble__core.html#ga4db7b2431174ceaaa4fe4ed8f2e07bb8">More...</a><br /></td></tr>
-<tr class="separator:ga4db7b2431174ceaaa4fe4ed8f2e07bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga90841f93dc44a1ee6b1ff7fc9bdf63b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga90841f93dc44a1ee6b1ff7fc9bdf63b4">aos_ble_core_get_tx_power_dbm</a> (uint8_t pow_level, int16_t *pow_dbm)</td></tr>
 <tr class="memdesc:ga90841f93dc44a1ee6b1ff7fc9bdf63b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert TX POWER from LEVEL to 0.01dBm unit,.  <a href="group__aos__ble__core.html#ga90841f93dc44a1ee6b1ff7fc9bdf63b4">More...</a><br /></td></tr>
 <tr class="separator:ga90841f93dc44a1ee6b1ff7fc9bdf63b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8370f1f49499796fd9c92d6600440b5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga8370f1f49499796fd9c92d6600440b5e">hci_notify_asynch_evt</a> (void *pdata)</td></tr>
-<tr class="memdesc:ga8370f1f49499796fd9c92d6600440b5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This callback is called from either.  <a href="group__aos__ble__core.html#ga8370f1f49499796fd9c92d6600440b5e">More...</a><br /></td></tr>
-<tr class="separator:ga8370f1f49499796fd9c92d6600440b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaac233ee21a7a8bdc1245453d0aba0cd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#gaac233ee21a7a8bdc1245453d0aba0cd5">hci_cmd_resp_release</a> (uint32_t flag)</td></tr>
-<tr class="memdesc:gaac233ee21a7a8bdc1245453d0aba0cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called when an ACI/HCI command response is received from the CPU2. A weak implementation is available in hci_tl.c based on polling mechanism The user may re-implement this function in the application to improve performance :  <a href="group__aos__ble__core.html#gaac233ee21a7a8bdc1245453d0aba0cd5">More...</a><br /></td></tr>
-<tr class="separator:gaac233ee21a7a8bdc1245453d0aba0cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga402aa7ea4cded694b7865ad909b1149f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga402aa7ea4cded694b7865ad909b1149f">hci_cmd_resp_wait</a> (uint32_t timeout)</td></tr>
-<tr class="memdesc:ga402aa7ea4cded694b7865ad909b1149f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called when an ACI/HCI command is sent to the CPU2 and the response is waited. It is called from the same context the HCI command has been sent. It shall not return until the command response notified by <a class="el" href="group__aos__ble__core.html#gaac233ee21a7a8bdc1245453d0aba0cd5" title="This function is called when an ACI/HCI command response is received from the CPU2....">hci_cmd_resp_release()</a> is received. A weak implementation is available in hci_tl.c based on polling mechanism The user may re-implement this function in the application to improve performance :  <a href="group__aos__ble__core.html#ga402aa7ea4cded694b7865ad909b1149f">More...</a><br /></td></tr>
-<tr class="separator:ga402aa7ea4cded694b7865ad909b1149f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacdf55c92c6146920853492ea89f99436"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#gacdf55c92c6146920853492ea89f99436">aos_ble_core_get_adv_status</a> (void)</td></tr>
-<tr class="memdesc:gacdf55c92c6146920853492ea89f99436"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function return the advertisement status (ON/OFF)  <a href="group__aos__ble__core.html#gacdf55c92c6146920853492ea89f99436">More...</a><br /></td></tr>
-<tr class="separator:gacdf55c92c6146920853492ea89f99436"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacff3c2fb72a1c7fb41808b9a00ee17d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#gacff3c2fb72a1c7fb41808b9a00ee17d8">aos_ble_core_remove_bond</a> (void)</td></tr>
-<tr class="memdesc:gacff3c2fb72a1c7fb41808b9a00ee17d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function remove all bonded devices.  <a href="group__aos__ble__core.html#gacff3c2fb72a1c7fb41808b9a00ee17d8">More...</a><br /></td></tr>
-<tr class="separator:gacff3c2fb72a1c7fb41808b9a00ee17d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaef400d428216a871e0071f3b85de2fea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#gaef400d428216a871e0071f3b85de2fea">aos_ble_core_stop_connectivity</a> (bool restart_adv)</td></tr>
-<tr class="memdesc:gaef400d428216a871e0071f3b85de2fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function stop connectivity, stop advertisement.  <a href="group__aos__ble__core.html#gaef400d428216a871e0071f3b85de2fea">More...</a><br /></td></tr>
-<tr class="separator:gaef400d428216a871e0071f3b85de2fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8a476c82b922f913f3419a743ddcbfd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga8a476c82b922f913f3419a743ddcbfd7">aos_ble_core_get_firmware_version</a> (<a class="el" href="structaos__ble__core__fw__version__t.html">aos_ble_core_fw_version_t</a> *ble_version)</td></tr>
-<tr class="memdesc:ga8a476c82b922f913f3419a743ddcbfd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">get stack and FUS firmware version,  <a href="group__aos__ble__core.html#ga8a476c82b922f913f3419a743ddcbfd7">More...</a><br /></td></tr>
-<tr class="separator:ga8a476c82b922f913f3419a743ddcbfd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab64bf60a9fbd28a85382ac4d37a6d30d"><td class="memItemLeft" align="right" valign="top">tBleStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#gab64bf60a9fbd28a85382ac4d37a6d30d">aos_ble_core_conn_interval_update_req</a> (<a class="el" href="group__aos__ble__core.html#ga798bb4073860a69e53b580cf8ea1dd04">aos_ble_core_conn_interval_t</a> conn_type)</td></tr>
-<tr class="memdesc:gab64bf60a9fbd28a85382ac4d37a6d30d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update BLE connection parameters,.  <a href="group__aos__ble__core.html#gab64bf60a9fbd28a85382ac4d37a6d30d">More...</a><br /></td></tr>
-<tr class="separator:gab64bf60a9fbd28a85382ac4d37a6d30d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9d03881e4dba6f3694c74928b961f4b4"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga9d03881e4dba6f3694c74928b961f4b4">aos_ble_core_get_connection_handle</a> (void)</td></tr>
-<tr class="memdesc:ga9d03881e4dba6f3694c74928b961f4b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return connection handle for the actual connection,.  <a href="group__aos__ble__core.html#ga9d03881e4dba6f3694c74928b961f4b4">More...</a><br /></td></tr>
-<tr class="separator:ga9d03881e4dba6f3694c74928b961f4b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6a4aaebedfe28da2639e7342ff341172"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga6a4aaebedfe28da2639e7342ff341172">aos_ble_core_hci_notify_asynch_evt</a> (void *pdata)</td></tr>
+<tr class="memdesc:ga6a4aaebedfe28da2639e7342ff341172"><td class="mdescLeft">&#160;</td><td class="mdescRight">This callback is called from either.  <a href="group__aos__ble__core.html#ga6a4aaebedfe28da2639e7342ff341172">More...</a><br /></td></tr>
+<tr class="separator:ga6a4aaebedfe28da2639e7342ff341172"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga06e39b2af25b2bd45f5cc2db05deb4cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga06e39b2af25b2bd45f5cc2db05deb4cc">aos_ble_core_hci_cmd_resp_release</a> (uint32_t flag)</td></tr>
+<tr class="memdesc:ga06e39b2af25b2bd45f5cc2db05deb4cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called when an ACI/HCI command response is received from the CPU2. A weak implementation is available in hci_tl.c based on polling mechanism The user may re-implement this function in the application to improve performance :  <a href="group__aos__ble__core.html#ga06e39b2af25b2bd45f5cc2db05deb4cc">More...</a><br /></td></tr>
+<tr class="separator:ga06e39b2af25b2bd45f5cc2db05deb4cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae4173d0c243293df5dde7f2f5df00967"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#gae4173d0c243293df5dde7f2f5df00967">aos_ble_core_hci_cmd_resp_wait</a> (uint32_t timeout)</td></tr>
+<tr class="memdesc:gae4173d0c243293df5dde7f2f5df00967"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called when an ACI/HCI command is sent to the CPU2 and the response is waited. It is called from the same context the HCI command has been sent. It shall not return until the command response notified by <a class="el" href="group__aos__ble__core.html#ga06e39b2af25b2bd45f5cc2db05deb4cc" title="This function is called when an ACI/HCI command response is received from the CPU2....">aos_ble_core_hci_cmd_resp_release()</a> is received. A weak implementation is available in hci_tl.c based on polling mechanism The user may re-implement this function in the application to improve performance :  <a href="group__aos__ble__core.html#gae4173d0c243293df5dde7f2f5df00967">More...</a><br /></td></tr>
+<tr class="separator:gae4173d0c243293df5dde7f2f5df00967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga981341141dd4d678c97e7e77d1028385"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga981341141dd4d678c97e7e77d1028385">aos_ble_core_get_ble_firmware_version</a> (<a class="el" href="structaos__ble__core__fw__version__t.html">aos_ble_core_fw_version_t</a> *ble_version)</td></tr>
+<tr class="memdesc:ga981341141dd4d678c97e7e77d1028385"><td class="mdescLeft">&#160;</td><td class="mdescRight">get stack and FUS firmwares version,  <a href="group__aos__ble__core.html#ga981341141dd4d678c97e7e77d1028385">More...</a><br /></td></tr>
+<tr class="separator:ga981341141dd4d678c97e7e77d1028385"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga97796071c2108b7324ea0b18f7d5a09f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga97796071c2108b7324ea0b18f7d5a09f">aos_ble_core_set_scan_callback</a> (<a class="el" href="group__aos__ble__core.html#gabb9e99d9aac7614e4e90689340396bf8">aos_ble_core_notif_callback_t</a> cb)</td></tr>
+<tr class="memdesc:ga97796071c2108b7324ea0b18f7d5a09f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set callback function for scan service.  <a href="group__aos__ble__core.html#ga97796071c2108b7324ea0b18f7d5a09f">More...</a><br /></td></tr>
+<tr class="separator:ga97796071c2108b7324ea0b18f7d5a09f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadcb707b9ac1140e86e3214affa12d7d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#gadcb707b9ac1140e86e3214affa12d7d0">aos_ble_core_set_connectivity_callback</a> (<a class="el" href="group__aos__ble__core.html#gabb9e99d9aac7614e4e90689340396bf8">aos_ble_core_notif_callback_t</a> cb)</td></tr>
+<tr class="memdesc:gadcb707b9ac1140e86e3214affa12d7d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set callback function for connectivity service.  <a href="group__aos__ble__core.html#gadcb707b9ac1140e86e3214affa12d7d0">More...</a><br /></td></tr>
+<tr class="separator:gadcb707b9ac1140e86e3214affa12d7d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7d33f0cf0e9a3d8676e56d9946378763"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__aos__ble__core.html#ga7d33f0cf0e9a3d8676e56d9946378763">aos_ble_core_set_app_callback</a> (<a class="el" href="group__aos__ble__core.html#gabb9e99d9aac7614e4e90689340396bf8">aos_ble_core_notif_callback_t</a> cb)</td></tr>
+<tr class="memdesc:ga7d33f0cf0e9a3d8676e56d9946378763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set callback function for application.  <a href="group__aos__ble__core.html#ga7d33f0cf0e9a3d8676e56d9946378763">More...</a><br /></td></tr>
+<tr class="separator:ga7d33f0cf0e9a3d8676e56d9946378763"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>BLE core related API (connectivity, advertisement, scan ...) </p>

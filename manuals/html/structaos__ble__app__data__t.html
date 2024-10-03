@@ -92,10 +92,6 @@ Collaboration diagram for aos_ble_app_data_t:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a24912c4860085d112caa8937ca6c1033"><td class="memItemLeft" align="right" valign="top"><a id="a24912c4860085d112caa8937ca6c1033"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaos__ble__app__data__t.html#a24912c4860085d112caa8937ca6c1033">ble_role</a></td></tr>
-<tr class="memdesc:a24912c4860085d112caa8937ca6c1033"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE GAP role : Peripheral, central, observer, broadcaster ... <br /></td></tr>
-<tr class="separator:a24912c4860085d112caa8937ca6c1033"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4200e6b7846b8577e8a136dbf9f77ee"><td class="memItemLeft" align="right" valign="top"><a id="ac4200e6b7846b8577e8a136dbf9f77ee"></a>
 <a class="el" href="structbuffer__t.html">buffer_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaos__ble__app__data__t.html#ac4200e6b7846b8577e8a136dbf9f77ee">serial_number</a></td></tr>
 <tr class="memdesc:ac4200e6b7846b8577e8a136dbf9f77ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Serial number to set in DIS service. <br /></td></tr>
@@ -104,6 +100,14 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="s
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaos__ble__app__data__t.html#a103ce275e52064b20cd1018288d0f123">app_version</a></td></tr>
 <tr class="memdesc:a103ce275e52064b20cd1018288d0f123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Application version (MFG or demo app ...) <br /></td></tr>
 <tr class="separator:a103ce275e52064b20cd1018288d0f123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a34fbda077bdf4236fb930951214f53"><td class="memItemLeft" align="right" valign="top"><a id="a3a34fbda077bdf4236fb930951214f53"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaos__ble__app__data__t.html#a3a34fbda077bdf4236fb930951214f53">model_number_string</a> [<a class="el" href="group__aos__ble__conf.html#ga9e54f672aae6cfc5a4586be9ac63a2f5">BLE_CFG_DIS_DATA_LEN_MAX</a>]</td></tr>
+<tr class="memdesc:a3a34fbda077bdf4236fb930951214f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device information service Model number string. <br /></td></tr>
+<tr class="separator:a3a34fbda077bdf4236fb930951214f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf82c32630b1cbc42b00a01f10f2c1c1"><td class="memItemLeft" align="right" valign="top"><a id="adf82c32630b1cbc42b00a01f10f2c1c1"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaos__ble__app__data__t.html#adf82c32630b1cbc42b00a01f10f2c1c1">manuf_name_string</a> [<a class="el" href="group__aos__ble__conf.html#ga9e54f672aae6cfc5a4586be9ac63a2f5">BLE_CFG_DIS_DATA_LEN_MAX</a>]</td></tr>
+<tr class="memdesc:adf82c32630b1cbc42b00a01f10f2c1c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device information service manufacturer name string. <br /></td></tr>
+<tr class="separator:adf82c32630b1cbc42b00a01f10f2c1c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab560da789dbdf33792acad8ff5cff3ed"><td class="memItemLeft" align="right" valign="top"><a id="ab560da789dbdf33792acad8ff5cff3ed"></a>
 <a class="el" href="structaos__ble__core__fw__version__t.html">aos_ble_core_fw_version_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaos__ble__app__data__t.html#ab560da789dbdf33792acad8ff5cff3ed">ble_version</a></td></tr>
 <tr class="memdesc:ab560da789dbdf33792acad8ff5cff3ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE fw version (stack and FUS versions) <br /></td></tr>
@@ -121,9 +125,13 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="s
 <tr class="memdesc:aaf78198499f38200161f1feae8832240"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE custom services and characteristics initialization data. <br /></td></tr>
 <tr class="separator:aaf78198499f38200161f1feae8832240"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39286a553d2faa1219e33e27741f3c43"><td class="memItemLeft" align="right" valign="top"><a id="a39286a553d2faa1219e33e27741f3c43"></a>
-<a class="el" href="group__aos__ble__common.html#gaca25692bb2c5ffe5f588b46d31e4acdb">custom_srvc_char_value_init_cb_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaos__ble__app__data__t.html#a39286a553d2faa1219e33e27741f3c43">app_init_char_cb</a></td></tr>
+<a class="el" href="group__aos__ble__common.html#ga32e9842d5454897c36ccd1b5c9f9f11b">custom_srvc_char_value_init_cb_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaos__ble__app__data__t.html#a39286a553d2faa1219e33e27741f3c43">app_init_char_cb</a></td></tr>
 <tr class="memdesc:a39286a553d2faa1219e33e27741f3c43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function to register, used at the BLE initialization to initialize characteristics value. <br /></td></tr>
 <tr class="separator:a39286a553d2faa1219e33e27741f3c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a571e4a6897b0f40bdf42a70271b11865"><td class="memItemLeft" align="right" valign="top"><a id="a571e4a6897b0f40bdf42a70271b11865"></a>
+<a class="el" href="group__aos__ble__common.html#ga16b4d16c93f835a56c24bf61093e126a">aos_ble_std_services_callback_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaos__ble__app__data__t.html#a571e4a6897b0f40bdf42a70271b11865">cb</a></td></tr>
+<tr class="memdesc:a571e4a6897b0f40bdf42a70271b11865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function to register for standard BLE services, bridge between app layer and aos standard ble services. <br /></td></tr>
+<tr class="separator:a571e4a6897b0f40bdf42a70271b11865"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Application data to send to the BLE to update characteristic data. </p>

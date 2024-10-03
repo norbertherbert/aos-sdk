@@ -75,13 +75,13 @@ typedef struct {
 tBleStatus ess_init(void);
 
 /*!
- * \fn void ess_app_notification(BAS_Notification_evt_t * pNotification)
+ * \fn void aos_ble_service_ess_app_notification(ESS_App_Notification_evt_t * pNotification)
  *
  * \brief Environmental sensing service notification function
  *
  * \param pNotification notification event code
  */
-void ess_app_notification(ESS_App_Notification_evt_t *pNotification);
+void aos_ble_service_ess_app_notification(ESS_App_Notification_evt_t *pNotification);
 
 /*!
  * \fn tBleStatus ess_udate_char(uint16_t uuid, uint8_t *payload)

@@ -138,6 +138,7 @@
 #pragma once
 
 #include "aos_common.h"
+#include "aos_ble_common.h"
 
 
 #ifdef __cplusplus
@@ -174,7 +175,6 @@ extern "C" {
 #define SRV_BLE_SCAN_MAX_RAW_DATA                   24	//!< Maximum data size when the custom beacon format is used.
 #define SRV_BLE_NB_ADV_CHANNELS                     3	//!< Number of BLE advertisement channels (standard)
 
-#define SRV_BLE_GAP_ADDR_LEN						6	//!< Size of the BLE MAC address
 
 /*!
  * \enum srv_ble_scan_eddystone_type_t
@@ -355,7 +355,7 @@ typedef struct {
  */
 typedef struct {
 	struct {
-		uint8_t addr[SRV_BLE_GAP_ADDR_LEN];				//!< GAP address
+		uint8_t addr[BLE_MAC_ADDR_SIZE];						//!< GAP address
 		int8_t rssi;									//!< Receive Signal Strength Information (dB)
 	} header;											//!< Header
 	srv_ble_scan_beacon_info_t binfo;					//!< Beacon data information
