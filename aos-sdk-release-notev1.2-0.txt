@@ -1,0 +1,49 @@
+Release 1.2.0
+=============
+Date
+----
+August, 13 2024.
+
+Bug fix
+-------
+AGM-510 AOS-SDK. GM02s, UART and MT3333  minor corrections 
+AGM-513 AOS-SDK : In GM02S driver modify the opening sequence to handle unexpected
+                  response form the module for a specific commands.
+AGM-523 AOS-SDK : LR1110 reschedule tasks aborted by radio planner due to LoRa mac requests
+AGM-527 Update BLE connection status when adv stopped
+AGM-529 AOS-SDK. High timer values not supported by FreeRTOS
+AGM-531 AOS-SDK. Correct GNSS issues for almanac management
+AGM-536 AOS-SDK. Sometimes the GNSS (MT3333) fails to start
+AGM-537 AOS-SDK. RTC bug: After 5 days the accelerometer consumption becomes invalid
+AGM-540 AOS-SDK: Adapt the test API to support LoRa/FSK transmission and reception testing
+                 between two nearby boards
+AGM-544 AOS-SDK : disable power estimation for GM02S
+AGM-517 SDK: Upgrade the BLE MAC to make it more random
+AGM-526 Update BLE beaconing management
+
+
+New feature
+-----------
+None
+
+
+
+
+
+Release 1.1.0
+=============
+Bug fix
+-------
+AGM-436 fixes for GM02S crash : change modem opening sequence when forcing the operator
+AGM-480. gm02s : pull the rts0 and reset lines low when turning off the modem
+AGM-501. AOS-SDK: Fix timing accuracy of the FreeRTOS timer
+
+New feature
+-----------
+BLE connectivity
+
+
+Release 1.0.0
+==============
+Initial release.
+
