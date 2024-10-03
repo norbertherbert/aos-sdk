@@ -1,0 +1,10 @@
+<map id="aos&#45;core/aos_ble/aos_ble_core.h" name="aos&#45;core/aos_ble/aos_ble_core.h">
+<area shape="rect" id="node1" title="BLE core related API (connectivity, advertisement, scan ...)" alt="" coords="200,5,347,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,69,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="94,95,183,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="399,169,473,196"/>
+<area shape="rect" id="node5" href="$aos__common_8h.html" title="Common definitions." alt="" coords="263,169,374,196"/>
+<area shape="rect" id="node7" href="$aos__ble__common_8h.html" title="common types and const for BLE module" alt="" coords="259,95,394,121"/>
+<area shape="rect" id="node8" href="$aos__lpm_8h.html" title="Low power management facility." alt="" coords="469,95,552,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="382,244,447,271"/>
+</map>
